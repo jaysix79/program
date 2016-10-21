@@ -1,0 +1,4 @@
+#!/bin/bash
+
+sudo ./blynk --token=2f79d6db732040449192407b49934622
+exit 1
