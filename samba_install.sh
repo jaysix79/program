@@ -33,18 +33,18 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo																									| tee -a 	"$LOG_FILE"
 
 	
-	apt-get -y install libcups2 samba samba-common cups				| tee -a        "$LOG_FILE"
-	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak				| tee -a        "$LOG_FILE"
-	cp -rfv ~/program/backup/samba/smb.conf smb.conf				| tee -a        "$LOG_FILE"
-	mkdir -pv /home/pi							 					| tee -a        "$LOG_FILE"
+	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
+	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
+	cp -rfv ~/program/backup/samba/smb.conf smb.conf							| tee -a        "$LOG_FILE"
+	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
 	chown -Rv root:pi /home/pi/							 			| tee -a        "$LOG_FILE"
-	chmod -Rv ug+rwx,o+rx-w /home/pi/							 	| tee -a        "$LOG_FILE"
+	chmod -Rv ug+rwx,o+rx-w /home/pi/							 		| tee -a        "$LOG_FILE"
 
-	systemctl restart smbd.service							 		| tee -a        "$LOG_FILE"
-	#adding pi							 							| tee -a        "$LOG_FILE"
+	systemctl restart smbd.service							 			| tee -a        "$LOG_FILE"
+	#adding pi							 					| tee -a        "$LOG_FILE"
 	useradd pi -m -G users							 				| tee -a        "$LOG_FILE"
-	passwd pi							 							| tee -a        "$LOG_FILE"
-	smbpasswd -a pi							 						| tee -a        "$LOG_FILE"
+	passwd pi							 					| tee -a        "$LOG_FILE"
+	smbpasswd -a pi							 					| tee -a        "$LOG_FILE"
 
 	echo ""																									| tee -a 	"$LOG_FILE"
 
