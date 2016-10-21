@@ -12,6 +12,7 @@
 # Short-Description: samba_install.sh
 ### END INIT INFO
 LOG_FILE="/home/pi/log/samba_install.sh.log"
+mkdir -p /home/pi/log/
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
