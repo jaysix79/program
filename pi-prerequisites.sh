@@ -1,36 +1,71 @@
 #!/bin/bash
-#	Setting up Pi Jessie (removing pi-bluetooth and bluez to avoid install error
-#	Updating and upgrading the system
-#	Installing wiring PI..	
-########################################################################
+## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
+##	sudo /home/pi/programs/pi-prerequisites.sh.sh 
+##	to run blynk "node blynk.js 2f79d6db732040449192407b49934622"
+##	auto start add this "/usr/local/lib/node_modules/blynk-library/blynk.js 2f79d6db732040449192407b49934622" on "sudo nano /etc/rc.local"
+### BEGIN INIT INFO
+# Provides:          pi-prerequisites.sh
+# Required-Start:    $local_fs 
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: pi-prerequisites.sh
+### END INIT INFO
 
 LOG_FILE="/home/pi/log/pi-prerequisites.log"
 mkdir -p /home/pi/log
 
-apt-get purge -y pi-bluetooth bluez				| tee -a 	"$LOG_FILE"
-apt-get -y autoremove							| tee -a 	"$LOG_FILE"
-apt-get -m update								| tee -a 	"$LOG_FILE"
-apt-get  -y -m dist-upgrade						| tee -a 	"$LOG_FILE"
+###	CHECKING IF IS BEING RUN AS ROOT
+if [ "$(whoami)" != "root" ]; then
+	echo "You have to run this script as Superuser! in order to install pi-prerequisites.sh"
+	exit 1
+fi
 
-sleep 0
-## Installing wiringPi
-#apt install git-core                             | tee -a 	"$LOG_FILE"
-#cd /home/pi
-#git clone git://git.drogon.net/wiringPi          | tee -a 	"$LOG_FILE"
-#cd /home/pi/wiringPi
-#git pull origin									 | tee -a 	"$LOG_FILE"
-#./build											 | tee -a 	"$LOG_FILE"
-#cd /home/pi
+###	CHECKING IF THE FOLDER EXIST
+if [ -d "/home/pi/blynk-libraryX" ]; then
+	echo "install pi-prerequisites.sh is already installed......."
+	exit 1
+fi
+
+###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
+if [ ! -d "/home/pi/blynk-libraryX" ]; then
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # Starting apt-get pi-prerequisites.sh  # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	date 																									| tee -a 	"$LOG_FILE"
+	echo																									| tee -a 	"$LOG_FILE"
+
+	
+
+	apt-get purge -y pi-bluetooth bluez				| tee -a 	"$LOG_FILE"
+	apt-get -y autoremove							        | tee -a 	"$LOG_FILE"
+	apt-get -m update								          | tee -a 	"$LOG_FILE"
+	apt-get  -y -m dist-upgrade					    	| tee -a 	"$LOG_FILE"
+
+	sleep 0
+
+	echo ""																									| tee -a 	"$LOG_FILE"
 
 
-##	Install SIP for springklers
+	echo "Congratuation install pi-prerequisites.sh is now installed......." 									| tee -a 	"$LOG_FILE"
+	echo																									| tee -a 	"$LOG_FILE"
+	date																									| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        pi-prerequisites.sh DONE!!       # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"  | tee -a 	"$LOG_FILE"
+	echo																								 	                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
 
-#apt install git									| tee -a 	"$LOG_FILE"
-#cd /home/pi
-#git clone https://github.com/Dan-in-CA/SIP		| tee -a 	"$LOG_FILE"
-#sleep 3
-#cd /home/pi/SIP
-#sudo python sip.py							 	| tee -a 	"$LOG_FILE"
-#cd /home/pi
+	exit 1
+fi
 
-exit 0
+
+
+
+
+
+
+
+exit 1
