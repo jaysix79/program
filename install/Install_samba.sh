@@ -58,12 +58,12 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        samba_install.sh DONE!!       # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
 
 	exit 1
 fi
