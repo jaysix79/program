@@ -13,14 +13,14 @@ LOG_FILE="/home/pi/log/Install_sip_sprinkler.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ];then
-	echo "You have to run this script as Superuser! in order to install sip_sprinkler"						| tee -a 	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to install sip_sprinkler"			| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
 if [ -d "/home/pi/SIPs" ]; then
-	echo "install sip_sprinkler is already installed......."												| tee -a 	"$LOG_FILE"
-	service sip status 																						| tee -a 	"$LOG_FILE"
+	echo "install sip_sprinkler is already installed......."						| tee -a 	"$LOG_FILE"
+	service sip status 											| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
@@ -28,33 +28,34 @@ fi
 if [ ! -d "/home/pi/SIPs" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # Starting apt-get-Install_sip_sprinkler  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	apt-get install git																						| tee -a 	"$LOG_FILE"	
-	apt-get update																							| tee -a 	"$LOG_FILE"
-	apt-get upgrade																							| tee -a 	"$LOG_FILE"
-	cd /home/pi 																							| tee -a 	"$LOG_FILE"
-	#git clone https://github.com/Dan-in-CA/SIP 															| tee -a 	"$LOG_FILE"
-	cd /home/pi/SIP 																						| tee -a 	"$LOG_FILE"
-	python /home/pi/SIP/sip.py 																				| tee -a 	"$LOG_FILE"
-	cp /home/pi/SIP/sip.sh /etc/init.d/sip 																	| tee -a 	"$LOG_FILE"
-	chmod +x /etc/init.d/sip 																				| tee -a 	"$LOG_FILE"
-	update-rc.d sip defaults 																				| tee -a 	"$LOG_FILE"
-	cd /home/pi 																							| tee -a 	"$LOG_FILE"
-	service sip status 																						| tee -a 	"$LOG_FILE"
-	echo "Congratuation install sip_sprinkler is now installed......." 										| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
+	date 													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	apt-get install git											| tee -a 	"$LOG_FILE"	
+	apt-get update												| tee -a 	"$LOG_FILE"
+	apt-get upgrade												| tee -a 	"$LOG_FILE"
+	cd /home/pi 												| tee -a 	"$LOG_FILE"
+	git clone https://github.com/Dan-in-CA/SIP 								| tee -a 	"$LOG_FILE"
+	cd /home/pi/SIP 											| tee -a 	"$LOG_FILE"
+	python /home/pi/SIP/sip.py 										| tee -a 	"$LOG_FILE"
+	cp /home/pi/SIP/sip.sh /etc/init.d/sip 									| tee -a 	"$LOG_FILE"
+	chmod +x /etc/init.d/sip 										| tee -a 	"$LOG_FILE"
+	update-rc.d sip defaults 										| tee -a 	"$LOG_FILE"
+	cd /home/pi 												| tee -a 	"$LOG_FILE"
+	service sip status 											| tee -a 	"$LOG_FILE"
+	sleep 2
+	echo "Congratuation install sip_sprinkler is now installed......." 					| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        Install_sip_sprinkler DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
 
 
 	exit 1
