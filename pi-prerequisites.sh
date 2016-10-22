@@ -50,7 +50,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	sleep 2
 	clear
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
-	cp -rfv ~/program/backup/samba/smb.conf /etc/samba/smb.conf						| tee -a        "$LOG_FILE"
+	cp -rfv /home/pi/program/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
 	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
 	chown -Rv root:pi /home/pi/							 			| tee -a        "$LOG_FILE"
 	chmod -Rv ug+rwx,o+rx-w /home/pi/							 		| tee -a        "$LOG_FILE"
@@ -64,7 +64,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo ""																									| tee -a 	"$LOG_FILE"
 	
 	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
-	cp -rfv ~/program/backup/network/dhcpcd.conf /etc/dhcpcd.conf						| tee -a        "$LOG_FILE"
+	cp -rfv /home/pi/program/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
 
 
 	echo "Congratuation install pi-prerequisites.sh is now installed......." 									| tee -a 	"$LOG_FILE"
