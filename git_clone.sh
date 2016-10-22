@@ -21,13 +21,13 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/home/pi/blynk-libraryX" ]; then
+if [ -d "xxx" ]; then
 	echo "install git_clone.sh is already installed......."							| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -d "/home/pi/blynk-libraryX" ]; then
+if [ ! -d "xxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #	 Starting apt-get git_clone.sh 	      # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 					                                              			| tee -a 	"$LOG_FILE"
@@ -35,7 +35,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo ""													| tee -a 	"$LOG_FILE"
 	
 	
-	git clone https://github.com/jaysix79/program.git temp							| tee -a 	"$LOG_FILE"
+	git clone https://github.com/jaysix79/programs.git temp							| tee -a 	"$LOG_FILE"
 	cp -rf  /home/pi/temp/* /home/pi/program								| tee -a 	"$LOG_FILE"
 	rm -rf temp												| tee -a 	"$LOG_FILE"
 	chmod +x -R ./program											| tee -a 	"$LOG_FILE"
