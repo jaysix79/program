@@ -29,26 +29,32 @@ if [ ! -d "xxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        Starting apt-get startup         # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
 
 
 	sudo service pi_garage_alert restart									| tee -a 	"$LOG_FILE"
+	sudo service pi_garage_alert status 									| tee -a "$LOG_FILE"
+	sleep 2
+	clear
+	
 	sudo ./blynk --token=2f79d6db732040449192407b49934622	&
 	echo ""													| tee -a 	"$LOG_FILE"
 
 
 	echo "Congratuation install startup is now installed......."						| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	
 	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #     	     startup DONE!!      	# # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	
 	exit 1
 fi
 
