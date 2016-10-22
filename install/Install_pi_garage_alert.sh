@@ -15,14 +15,16 @@ mkdir -p $LOG_Diretory
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"
+	clear
+	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
 	exit 0
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
 if [ -d "/home/pi/pi_garage_alertd" ]; then
-	service pi_garage_alert status
-	echo "install Install_pi_garage_alert is already installed......."
+	clear
+	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo "install Install_pi_garage_alert is already installed......."					| tee -a  	"$LOG_FILE"
 	exit 0
 fi
 
@@ -30,56 +32,60 @@ fi
 if [ ! -d "/home/pi/pi_garage_alertd" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	echo "# # # # # # # # Starting apt-get-Install_pi_garage_alert  # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
-	date 																									| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	echo "Installing pre-requisete......." 																	| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	sudo apt-get install python-setuptools python-dev libffi-dev											| tee -a  	"$LOG_FILE"
-	sudo easy_install pip																					| tee -a  	"$LOG_FILE"
-	sudo pip install tweepy																					| tee -a  	"$LOG_FILE"
-	sudo pip install twilio																					| tee -a  	"$LOG_FILE"
-	sudo pip install sleekxmpp dnspython pyasn1 pyasn1_modules												| tee -a  	"$LOG_FILE"
-	sudo pip install requests																				| tee -a  	"$LOG_FILE"
-	sudo pip install requests[security]																		| tee -a  	"$LOG_FILE"
-	apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules							| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	echo "Downloading pi_garage_alert......." 																| tee -a  	"$LOG_FILE"
-	cd /home/pi																								| tee -a  	"$LOG_FILE"
-	git clone https://github.com/rllynch/pi_garage_alert.git												| tee -a  	"$LOG_FILE"
-	cd /home/pi/pi_garage_alert																				| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/pi_garage_alert/bin/pi_garage_alert.py /usr/local/sbin/									| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/pi_garage_alert/etc/pi_garage_alert_config.py /usr/local/etc/							| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/pi_garage_alert/init.d/pi_garage_alert /etc/init.d/										| tee -a  	"$LOG_FILE"
-	chown pi /usr/local/etc/pi_garage_alert_config.py														| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/pi_garage_alert/email/sasl_passwd /etc/postfix/											| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/pi_garage_alert/email/main.cf /etc/postfix/												| tee -a  	"$LOG_FILE"
-	sudo chown pi /usr/local/sbin/pi_garage_alert.py														| tee -a  	"$LOG_FILE"
-	chmod +x /usr/local/sbin/pi_garage_alert.py																| tee -a  	"$LOG_FILE"
-	sudo chmod 400 /etc/postfix/sasl_passwd																	| tee -a  	"$LOG_FILE"
-	sudo postmap /etc/postfix/sasl_passwd																	| tee -a  	"$LOG_FILE"
-	cat /etc/ssl/certs/Thawte_Premium_Server_CA.pem | sudo tee -a /etc/postfix/cacert.pem					| tee -a  	"$LOG_FILE"
-	sudo /etc/init.d/postfix reload																			| tee -a  	"$LOG_FILE"
-	echo "test mail" | mail -s "test subject" 9494603641@txt.att.net										| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	service pi_garage_alert restart																			| tee -a  	"$LOG_FILE"
-	service pi_garage_alert status																			| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
+	date 													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "Installing pre-requisete......." 									| tee -a  	"$LOG_FILE"
+	sleep 2
+	
+	echo	""												| tee -a  	"$LOG_FILE"
+	sudo apt-get install python-setuptools python-dev libffi-dev						| tee -a  	"$LOG_FILE"
+	sudo easy_install pip											| tee -a  	"$LOG_FILE"
+	sudo pip install tweepy											| tee -a  	"$LOG_FILE"
+	sudo pip install twilio											| tee -a  	"$LOG_FILE"
+	sudo pip install sleekxmpp dnspython pyasn1 pyasn1_modules						| tee -a  	"$LOG_FILE"
+	sudo pip install requests										| tee -a  	"$LOG_FILE"
+	sudo pip install requests[security]									| tee -a  	"$LOG_FILE"
+	apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules				| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "Downloading pi_garage_alert......." 								| tee -a  	"$LOG_FILE"
+	sleep 2
+	
+	git clone https://github.com/rllynch/pi_garage_alert.git						| tee -a  	"$LOG_FILE"
+	
+	cp -v /home/pi/pi_garage_alert/bin/pi_garage_alert.py /usr/local/sbin/					| tee -a  	"$LOG_FILE"
+	cp -v /home/pi/pi_garage_alert/etc/pi_garage_alert_config.py /usr/local/etc/				| tee -a  	"$LOG_FILE"
+	cp -v /home/pi/pi_garage_alert/init.d/pi_garage_alert /etc/init.d/					| tee -a  	"$LOG_FILE"
+	chown pi /usr/local/etc/pi_garage_alert_config.py							| tee -a  	"$LOG_FILE"
+	cp -v /home/pi/pi_garage_alert/email/sasl_passwd /etc/postfix/						| tee -a  	"$LOG_FILE"
+	cp -v /home/pi/pi_garage_alert/email/main.cf /etc/postfix/						| tee -a  	"$LOG_FILE"
+	sudo chown pi /usr/local/sbin/pi_garage_alert.py							| tee -a  	"$LOG_FILE"
+	chmod +x /usr/local/sbin/pi_garage_alert.py								| tee -a  	"$LOG_FILE"
+	sudo chmod 400 /etc/postfix/sasl_passwd									| tee -a  	"$LOG_FILE"
+	sudo postmap /etc/postfix/sasl_passwd									| tee -a  	"$LOG_FILE"
+	cat /etc/ssl/certs/Thawte_Premium_Server_CA.pem | sudo tee -a /etc/postfix/cacert.pem			| tee -a  	"$LOG_FILE"
+	sudo /etc/init.d/postfix reload										| tee -a  	"$LOG_FILE"
+	echo "test mail" | mail -s "test subject" 9494603641@txt.att.net					| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	service pi_garage_alert restart										| tee -a  	"$LOG_FILE"
+	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
 
 
-	echo "Congratuation install Install_pi_garage_alert is now installed......." 							| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	date																									| tee -a  	"$LOG_FILE"
+	echo "Congratuation install Install_pi_garage_alert is now installed......." 				| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	
+	date													| tee -a  	"$LOG_FILE"
 	echo "# # # # # # # #        Install_pi_garage_alert DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
-	echo																									| tee -a  	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+
 	exit 0
 fi
 
