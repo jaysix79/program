@@ -1,8 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
 ##	sudo /home/pi/programs/pi-prerequisites.sh.sh 
-##	to run blynk "node blynk.js 2f79d6db732040449192407b49934622"
-##	auto start add this "/usr/local/lib/node_modules/blynk-library/blynk.js 2f79d6db732040449192407b49934622" on "sudo nano /etc/rc.local"
 ### BEGIN INIT INFO
 # Provides:          pi-prerequisites.sh
 # Required-Start:    $local_fs 
@@ -35,25 +33,28 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo																									| tee -a 	"$LOG_FILE"
 
 	
-
+	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
+	sleep 2
 	apt-get purge -y pi-bluetooth bluez									| tee -a 	"$LOG_FILE"
 	apt-get -y autoremove							        			| tee -a 	"$LOG_FILE"
 	apt-get -m update								          		| tee -a 	"$LOG_FILE"
 	apt-get  -y -m dist-upgrade					    					| tee -a 	"$LOG_FILE"
 
-	sleep 0
+	sleep 4
 
 	echo ""																									| tee -a 	"$LOG_FILE"
-
-
-
+	clear
+	echo "Installing samba........................................."					| tee -a 	"$LOG_FILE"
+	sleep 2
 	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
+	sleep 2
+	clear
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
 	cp -rfv ~/program/backup/samba/smb.conf smb.conf							| tee -a        "$LOG_FILE"
 	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
 	chown -Rv root:pi /home/pi/							 			| tee -a        "$LOG_FILE"
 	chmod -Rv ug+rwx,o+rx-w /home/pi/							 		| tee -a        "$LOG_FILE"
-
+	
 	systemctl restart smbd.service							 			| tee -a        "$LOG_FILE"
 	#adding pi							 					| tee -a        "$LOG_FILE"
 	useradd pi -m -G users							 				| tee -a        "$LOG_FILE"
