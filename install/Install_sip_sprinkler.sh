@@ -33,30 +33,33 @@ if [ ! -d "/home/pi/SIPs" ]; then
 	apt-get install git											| tee -a 	"$LOG_FILE"	
 	apt-get update												| tee -a 	"$LOG_FILE"
 	apt-get upgrade												| tee -a 	"$LOG_FILE"
-	cd /home/pi 												| tee -a 	"$LOG_FILE"
+	
+	echo "Downloading the source........ "									| tee -a 	"$LOG_FILE"
 	git clone https://github.com/Dan-in-CA/SIP 								| tee -a 	"$LOG_FILE"
-	cd /home/pi/SIP 											| tee -a 	"$LOG_FILE"
+	sleep 2
+	
+	clear
 	python /home/pi/SIP/sip.py 										| tee -a 	"$LOG_FILE"
-	cp /home/pi/SIP/sip.sh /etc/init.d/sip 									| tee -a 	"$LOG_FILE"
+	cp -v /home/pi/SIP/sip.sh /etc/init.d/sip 									| tee -a 	"$LOG_FILE"
 	chmod +x /etc/init.d/sip 										| tee -a 	"$LOG_FILE"
 	update-rc.d sip defaults 										| tee -a 	"$LOG_FILE"
-	cd /home/pi 												| tee -a 	"$LOG_FILE"
 	service sip status 											| tee -a 	"$LOG_FILE"
 	sleep 2
 	echo "Congratuation install sip_sprinkler is now installed......." 					| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	
 	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        Install_sip_sprinkler DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	
 
 	exit 1
 fi
