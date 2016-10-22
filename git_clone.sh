@@ -31,8 +31,9 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #	 Starting apt-get git_clone.sh 	      # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 					                                              			| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
-
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	
 	
 	git clone https://github.com/jaysix79/program.git temp							| tee -a 	"$LOG_FILE"
 	cp -rf  /home/pi/temp/* /home/pi/program								| tee -a 	"$LOG_FILE"
@@ -41,16 +42,17 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 
 
 	echo "Congratuation install git_clone.sh is now installed......." 					| tee -a 	"$LOG_FILE"
-	echo													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
 	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #      	  git_clone.sh DONE!!       	# # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo						 	                                                | tee -a 	"$LOG_FILE"
-	echo							                                                | tee -a 	"$LOG_FILE"
-	echo							                                                | tee -a 	"$LOG_FILE"
-	echo							                                                | tee -a 	"$LOG_FILE"
-	echo							                                                | tee -a 	"$LOG_FILE"
-	echo							                                                | tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
 
 	exit 1
 fi
