@@ -55,7 +55,7 @@ if [ ! -d "/home/pi/pi_garage_alertd" ]; then
 	
 	cp -v /home/pi/programs/backup/pi_garage_alert/bin/pi_garage_alert.py /usr/local/sbin/			| tee -a  	"$LOG_FILE"
 	cp -v /home/pi/programs/backup/pi_garage_alert/etc/pi_garage_alert_config.py /usr/local/etc/		| tee -a  	"$LOG_FILE"
-	cp -v /home/pi/programs/backup/pi_garage_alert/pi_garage_alert /etc/init.d/				| tee -a  	"$LOG_FILE"
+	cp -v /home/pi/programs/backup/pi_garage_alert/init.d/pi_garage_alert /etc/init.d/			| tee -a  	"$LOG_FILE"
 	chown pi /usr/local/etc/pi_garage_alert_config.py							| tee -a  	"$LOG_FILE"
 	cp -v /home/pi/programs/backup/pi_garage_alert/email/sasl_passwd /etc/postfix/				| tee -a  	"$LOG_FILE"
 	cp -v /home/pi/programs/backup/pi_garage_alert/email/main.cf /etc/postfix/				| tee -a  	"$LOG_FILE"
