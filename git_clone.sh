@@ -16,41 +16,41 @@ mkdir -p /home/pi/log
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install git_clone.sh"
+	echo "You have to run this script as Superuser! in order to install git_clone.sh"			| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
 if [ -d "/home/pi/blynk-libraryX" ]; then
-	echo "install git_clone.sh is already installed......."
+	echo "install git_clone.sh is already installed......."							| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get git_clone.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																						                                              			| tee -a 	"$LOG_FILE"
-	echo																									                                              | tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #	 Starting apt-get git_clone.sh 	      # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	date 					                                              			| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
 
 	
-sudo git clone https://github.com/jaysix79/program.git temp
-sudo cp -rf  /home/pi/temp/* /home/pi/program
-sudo rm -rf temp
-sudo chmod +x -R ./program
+	git clone https://github.com/jaysix79/program.git temp							| tee -a 	"$LOG_FILE"
+	cp -rf  /home/pi/temp/* /home/pi/program								| tee -a 	"$LOG_FILE"
+	rm -rf temp												| tee -a 	"$LOG_FILE"
+	chmod +x -R ./program											| tee -a 	"$LOG_FILE"
 
 
-	echo "Congratuation install git_clone.sh is now installed......." 									| tee -a 	"$LOG_FILE"
-	echo																									          | tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        git_clone.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "Congratuation install git_clone.sh is now installed......." 					| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	date													| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #      	  git_clone.sh DONE!!       	# # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																								 	                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo						 	                                                | tee -a 	"$LOG_FILE"
+	echo							                                                | tee -a 	"$LOG_FILE"
+	echo							                                                | tee -a 	"$LOG_FILE"
+	echo							                                                | tee -a 	"$LOG_FILE"
+	echo							                                                | tee -a 	"$LOG_FILE"
+	echo							                                                | tee -a 	"$LOG_FILE"
 
 	exit 1
 fi
