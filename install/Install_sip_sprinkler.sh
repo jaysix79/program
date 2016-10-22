@@ -39,10 +39,11 @@ if [ ! -d "/home/pi/SIPs" ]; then
 	sleep 2
 	
 	clear
-	python /home/pi/SIP/sip.py 										| tee -a 	"$LOG_FILE"
+	
 	cp -v /home/pi/SIP/sip.sh /etc/init.d/sip 									| tee -a 	"$LOG_FILE"
 	chmod +x /etc/init.d/sip 										| tee -a 	"$LOG_FILE"
 	update-rc.d sip defaults 										| tee -a 	"$LOG_FILE"
+	sudo python /home/pi/SIP/sip.py 										| tee -a 	"$LOG_FILE"
 	service sip status 											| tee -a 	"$LOG_FILE"
 	sleep 2
 	echo "Congratuation install sip_sprinkler is now installed......." 					| tee -a 	"$LOG_FILE"
