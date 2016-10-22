@@ -1,1 +1,65 @@
 
+#!/bin/bash
+## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
+##	sudo /home/pi/programs/git_clone.sh.sh 
+### BEGIN INIT INFO
+# Provides:          git_clone.sh
+# Required-Start:    $local_fs 
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: git_clone.sh
+### END INIT INFO
+
+LOG_FILE="/home/pi/log/git_clone.log"
+mkdir -p /home/pi/log
+
+###	CHECKING IF IS BEING RUN AS ROOT
+if [ "$(whoami)" != "root" ]; then
+	echo "You have to run this script as Superuser! in order to install git_clone.sh"
+	exit 1
+fi
+
+###	CHECKING IF THE FOLDER EXIST
+if [ -d "/home/pi/blynk-libraryX" ]; then
+	echo "install git_clone.sh is already installed......."
+	exit 1
+fi
+
+###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
+if [ ! -d "/home/pi/blynk-libraryX" ]; then
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # Starting apt-get git_clone.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	date 																						                                              			| tee -a 	"$LOG_FILE"
+	echo																									                                              | tee -a 	"$LOG_FILE"
+
+	
+sudo git clone https://github.com/jaysix79/program.git temp
+sudo cp -rf  /home/pi/temp/* /home/pi/program
+sudo rm -rf temp
+sudo chmod +x -R ./program
+
+
+	echo "Congratuation install git_clone.sh is now installed......." 									| tee -a 	"$LOG_FILE"
+	echo																									          | tee -a 	"$LOG_FILE"
+	date																									| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        git_clone.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo																								 	                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo																									                                                | tee -a 	"$LOG_FILE"
+
+	exit 1
+fi
+
+
+
+
+
+
+
+
+exit 1
