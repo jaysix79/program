@@ -36,9 +36,9 @@ if [ ! -d "xxx" ]; then
 	
 	
 	git clone https://github.com/jaysix79/programs.git temp							| tee -a 	"$LOG_FILE"
-	cp -rf  /home/pi/temp/* /home/pi/program								| tee -a 	"$LOG_FILE"
+	cp -rf  /home/pi/temp/* /home/pi/programs								| tee -a 	"$LOG_FILE"
 	rm -rf temp												| tee -a 	"$LOG_FILE"
-	chmod +x -R ./program											| tee -a 	"$LOG_FILE"
+	chmod +x -R ./programs											| tee -a 	"$LOG_FILE"
 
 
 	echo "Congratuation install git_clone.sh is now installed......." 					| tee -a 	"$LOG_FILE"
