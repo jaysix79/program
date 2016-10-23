@@ -9,7 +9,7 @@
 # Default-Stop:      0 1 6
 # Short-Description: Install_sip_sprinkler
 ### END INIT INFO
-LOG_FILE="/home/pi/log/Install_sip_sprinkler.log"
+LOG_FILE="/home/pi/log/install/Install_sip_sprinkler.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ];then
