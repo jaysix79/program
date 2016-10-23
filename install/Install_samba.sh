@@ -11,7 +11,7 @@
 # Default-Stop:      0 1 6
 # Short-Description: samba_install.sh
 ### END INIT INFO
-LOG_FILE="/home/pi/log/samba_install.sh.log"
+LOG_FILE="/home/pi/log/install/samba_install.sh.log"
 mkdir -p /home/pi/log/
 
 ###	CHECKING IF IS BEING RUN AS ROOT
