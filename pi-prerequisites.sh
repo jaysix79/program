@@ -10,7 +10,7 @@
 # Short-Description: pi-prerequisites.sh
 ### END INIT INFO
 
-LOG_FILE="/home/pi/log/pi-prerequisites.log"
+LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 mkdir -p /home/pi/log
 
 ###	CHECKING IF IS BEING RUN AS ROOT
