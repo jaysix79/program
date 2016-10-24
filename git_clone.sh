@@ -11,7 +11,7 @@
 # Short-Description: git_clone.sh
 ### END INIT INFO
 
-LOG_FILE="/home/pi/log/git_clone.log"
+LOG_FILE="/home/pi/log/install/git_clone.log"
 mkdir -p /home/pi/log
 
 ###	CHECKING IF IS BEING RUN AS ROOT
