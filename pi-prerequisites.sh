@@ -52,6 +52,10 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
 	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
+	mkdir -pv /usr/share/openhabi							 			| tee -a        "$LOG_FILE"
+	mkdir -pv /etc/openhab							 				| tee -a        "$LOG_FILE"
+	chown -hRv openhab:openhab /etc/openhab									| tee -a        "$LOG_FILE"
+	chown -hRv openhab:openhab /etc/openhab									| tee -a        "$LOG_FILE"
 	chown -Rv root:pi /home/pi/							 			| tee -a        "$LOG_FILE"
 	chmod -Rv ug+rwx,o+rx-w /home/pi/							 		| tee -a        "$LOG_FILE"
 	
