@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/install/Install_blynk_latest.sh 
+##	sudo sh /home/pi/programs/install/Install_blynk_latest.sh 
 ##	to run blynk "node blynk.js 2f79d6db732040449192407b49934622"
 ##	auto start add this "/usr/local/lib/node_modules/blynk-library/blynk.js 2f79d6db732040449192407b49934622" on "sudo nano /etc/rc.local"
 ### BEGIN INIT INFO
@@ -11,6 +11,8 @@
 # Default-Stop:      0 1 6
 # Short-Description: Install_blynk_latest
 ### END INIT INFO
+
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/Install_blynk_latest.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
