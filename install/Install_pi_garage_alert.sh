@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/install/Install_pi_garage_alert.sh 
+##	sudo sh /home/pi/programs/install/Install_pi_garage_alert.sh 
 ### BEGIN INIT INFO
 # Provides:          Install_pi_garage_alert
 # Required-Start:    $local_fs 
@@ -9,9 +9,9 @@
 # Default-Stop:      0 1 6
 # Short-Description: Install_pi_garage_alert
 ### END INIT INFO
+
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/Install_pi_garage_alert.log"
-LOG_Diretory="/home/pi/log/install"
-mkdir -p $LOG_Diretory
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
