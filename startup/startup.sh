@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/startup/startup.sh 
+##	sudo sh /home/pi/programs/startup/startup.sh 
 ### BEGIN INIT INFO
 # Provides:          startup
 # Required-Start:    $local_fs 
@@ -10,6 +10,7 @@
 # Short-Description: startup
 ### END INIT INFO
 
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/startup.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
@@ -34,7 +35,7 @@ if [ ! -d "xxx" ]; then
 
 
 	sudo service pi_garage_alert restart									| tee -a 	"$LOG_FILE"
-	sudo service pi_garage_alert status 									| tee -a "$LOG_FILE"
+	sudo service pi_garage_alert status 									| tee -a	"$LOG_FILE"
 	sleep 2
 	clear
 	
