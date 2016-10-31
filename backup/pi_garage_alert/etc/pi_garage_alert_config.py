@@ -13,7 +13,7 @@ GARAGE_DOORS = [
             {
                 'state': 'open',
                 'time': 1,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             }
 
         ]
@@ -26,36 +26,36 @@ GARAGE_DOORS = [
             {
                 'state': 'open',
                 'time': 300,
-		'recipients': [ 'email:9494603641@txt.att.net' ]
+		'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },
             {
                 'state': 'open',
                 'time': 900,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },
             {
                 'state': 'open',
                 'time': 1800,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },            {
                 'state': 'open',
                 'time': 3600,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },
             {
                 'state': 'open',
                 'time': 5400,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },
             {
                 'state': 'open',
                 'time': 7200,
-                'recipients': [ 'email:9494603641@txt.att.net' ]
+                'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             },
             {
                 'state': 'open',
                 'time': 7900,
-		'recipients': [ 'email:9494603641@txt.att.net' ]
+		'recipients': [ 'email:9494603641@txt.att.net', 'email:6263767914@txt.att.net' ]
             }
         ]
     }
