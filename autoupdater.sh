@@ -1,5 +1,5 @@
 #!/bin/bash
-#	sudo /home/pi/programs/autoupdater.sh 
+#	sudo sh /home/pi/programs/autoupdater.sh 
 #	apt-get update downloader script for cron automatization
 ### BEGIN INIT INFO
 # Provides:          autoupdater
