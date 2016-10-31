@@ -31,7 +31,7 @@ fi
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/pi_garage_alertd" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get-Install_pi_garage_alert  # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
+	echo "# # # # # # #   Starting apt-get Install_pi_garage_alert  # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	date 													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
