@@ -51,8 +51,9 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "Installing samba........................................."					| tee -a 	"$LOG_FILE"
 	sleep 2
 	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
-	sleep 2
-	clear
+	echo ""																									| tee -a 	"$LOG_FILE"
+	echo ""																									| tee -a 	"$LOG_FILE"
+	echo "Finalizing samba........................................."					| tee -a 	"$LOG_FILE"
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
 	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
@@ -62,20 +63,24 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	chown -hRv openhab:openhab /etc/openhab									| tee -a        "$LOG_FILE"
 	chown -Rv root:pi /home/pi/							 			| tee -a        "$LOG_FILE"
 	chmod -Rv ug+rwx,o+rx-w /home/pi/							 		| tee -a        "$LOG_FILE"
-	
+	echo "" 												| tee -a 	"$LOG_FILE"
 	systemctl restart smbd.service							 			| tee -a        "$LOG_FILE"
 	#adding pi							 					| tee -a        "$LOG_FILE"
+	sleep 3
+	clear
 	useradd pi -m -G users							 				| tee -a        "$LOG_FILE"
+	echo "Pi USER password......." 										| tee -a 	"$LOG_FILE"
 	passwd pi							 					| tee -a        "$LOG_FILE"
+	echo "Samba password......." 										| tee -a 	"$LOG_FILE"
 	smbpasswd -a pi							 					| tee -a        "$LOG_FILE"
-
+	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "changing IP address to static XXX.XXX.XX.5"																									| tee -a 	"$LOG_FILE"
-	
+	echo "" 												| tee -a 	"$LOG_FILE"
 	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
-
-
-	echo "Congratuation install pi-prerequisites.sh is now installed......." 									| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "Congratuation install pi-prerequisites.sh is now installed......." 				| tee -a 	"$LOG_FILE"
 	echo																									| tee -a 	"$LOG_FILE"
 	date																									| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
