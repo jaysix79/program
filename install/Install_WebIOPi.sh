@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/install/Install_WebIOPi.sh 
+##	sudo sh /home/pi/programs/install/Install_WebIOPi.sh 
 ### BEGIN INIT INFO
 # Provides:          Install_WebIOPi
 # Required-Start:    $local_fs 
@@ -9,6 +9,8 @@
 # Default-Stop:      0 1 6
 # Short-Description: Install_WebIOPi
 ### END INIT INFO
+
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/Install_WebIOPi.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
