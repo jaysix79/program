@@ -13,7 +13,7 @@
 # Short-Description: pi-prerequisites.sh
 ### END INIT INFO
 
-mkdir -p /home/pi/log
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 
 
