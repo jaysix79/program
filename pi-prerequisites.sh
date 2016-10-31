@@ -1,6 +1,9 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux sudo resize2fs /dev/sda2
 ##	sudo /home/pi/programs/pi-prerequisites.sh.sh 
+#	sudo apt-get install git
+#	git clone https://github.com/jaysix79/programs.git
+#
 ### BEGIN INIT INFO
 # Provides:          pi-prerequisites.sh
 # Required-Start:    $local_fs 
