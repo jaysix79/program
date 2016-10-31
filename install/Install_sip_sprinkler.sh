@@ -20,14 +20,14 @@ if [ "$(whoami)" != "root" ];then
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/home/pi/SIPs" ]; then
+if [ -d "/home/pi/SIP" ]; then
 	echo "install sip_sprinkler is already installed......."						| tee -a 	"$LOG_FILE"
 	service sip status 											| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -d "/home/pi/SIPs" ]; then
+if [ ! -d "/home/pi/SIP" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # Starting apt-get-Install_sip_sprinkler  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
