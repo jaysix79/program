@@ -32,10 +32,10 @@ fi
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get pi-prerequisites.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-
+	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	date 													| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	
 	
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
 	sleep 2
@@ -80,18 +80,21 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
+	chmod +x -R ./programs											| tee -a 	"$LOG_FILE"
 	echo "Congratuation install pi-prerequisites.sh is now installed......." 				| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
 	date																									| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        pi-prerequisites.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																								 	                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	
 	exit 1
 fi
 
