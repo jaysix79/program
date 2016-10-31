@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux sudo resize2fs /dev/sda2
-##	sudo /home/pi/programs/pi-prerequisites.sh.sh 
+##	sudo /home/pi/programs/pi-prerequisites.sh
 #	sudo apt-get install git
 #	git clone https://github.com/jaysix79/programs.git
 #
@@ -13,8 +13,9 @@
 # Short-Description: pi-prerequisites.sh
 ### END INIT INFO
 
-LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 mkdir -p /home/pi/log
+LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
+
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
