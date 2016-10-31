@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/memory_cleaning.sh 
+##	sudo sh /home/pi/programs/memory_cleaning.sh 
 ### BEGIN INIT INFO
 # Provides:          memory_cleaning
 # Required-Start:    $local_fs 
@@ -9,6 +9,8 @@
 # Default-Stop:      0 1 6
 # Short-Description: memory_cleaning
 ### END INIT INFO
+
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/memory_cleaning.log"
 
 
