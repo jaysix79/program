@@ -10,7 +10,7 @@
 # Default-Stop:      0 1 6
 # Short-Description: git_clone.sh
 ### END INIT INFO
-mkdir -p /home/pi/log
+mkdir -p /home/pi/log/install/
 LOG_FILE="/home/pi/log/install/git_clone.log"
 
 
