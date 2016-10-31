@@ -41,7 +41,7 @@ if [ ! -d "xxx" ]; then
 	chmod +x -R ./programs											| tee -a 	"$LOG_FILE"
 
 
-	echo "Congratuation install git_clone.sh is now installed......." 					| tee -a 	"$LOG_FILE"
+	echo "Congratuation downloaded git_clone.sh is now installed......." 					| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
 	date													| tee -a 	"$LOG_FILE"
