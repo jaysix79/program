@@ -21,7 +21,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/home/pi/pi_garage_alertd" ]; then
+if [ -d "/home/pi/pi_garage_alert" ]; then
 	clear
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
 	echo "install Install_pi_garage_alert is already installed......."					| tee -a  	"$LOG_FILE"
@@ -29,7 +29,7 @@ if [ -d "/home/pi/pi_garage_alertd" ]; then
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -d "/home/pi/pi_garage_alertd" ]; then
+if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	echo "# # # # # # #   Starting apt-get Install_pi_garage_alert  # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	date 													| tee -a  	"$LOG_FILE"
