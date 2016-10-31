@@ -69,7 +69,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	passwd pi							 					| tee -a        "$LOG_FILE"
 	smbpasswd -a pi							 					| tee -a        "$LOG_FILE"
 
-	echo ""																									| tee -a 	"$LOG_FILE"
+	echo "changing IP address to static XXX.XXX.XX.5"																									| tee -a 	"$LOG_FILE"
 	
 	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
