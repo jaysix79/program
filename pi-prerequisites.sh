@@ -86,7 +86,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	wget -O basic-install.sh https://install.pi-hole.net							| tee -a 	"$LOG_FILE"
 	chmod +x basic-install.sh										| tee -a 	"$LOG_FILE"
 	./basic-install.sh											| tee -a 	"$LOG_FILE"
-	rm ././basic-install.sh											| tee -a 	"$LOG_FILE"
+	rm ./basic-install.sh											| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	date																									| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
