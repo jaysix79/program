@@ -1,7 +1,7 @@
 
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/git_clone.sh 
+##	sudo sh /home/pi/programs/git_clone.sh 
 ### BEGIN INIT INFO
 # Provides:          git_clone.sh
 # Required-Start:    $local_fs 
