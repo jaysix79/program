@@ -80,7 +80,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	chmod +x -R ./programs											| tee -a 	"$LOG_FILE"
+	chmod +x -Rv ./programs											| tee -a 	"$LOG_FILE"
 	echo "Congratuation install pi-prerequisites.sh is now installed......." 				| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	date																									| tee -a 	"$LOG_FILE"
