@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo /home/pi/programs/XXXXXXXXXXXX.sh.sh 
+##	sudo sh /home/pi/programs/XXXXXXXXXXXX.sh.sh 
 ### BEGIN INIT INFO
 # Provides:          XXXXXXXXXXXX.sh
 # Required-Start:    $local_fs 
@@ -10,8 +10,9 @@
 # Short-Description: XXXXXXXXXXXX.sh
 ### END INIT INFO
 
+mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/XXXXXXXXXXXX.log"
-mkdir -p /home/pi/log
+
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
