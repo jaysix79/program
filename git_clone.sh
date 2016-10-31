@@ -10,9 +10,9 @@
 # Default-Stop:      0 1 6
 # Short-Description: git_clone.sh
 ### END INIT INFO
-
-LOG_FILE="/home/pi/log/install/git_clone.log"
 mkdir -p /home/pi/log
+LOG_FILE="/home/pi/log/install/git_clone.log"
+
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
