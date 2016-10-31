@@ -72,7 +72,8 @@ if [ ! -d "/home/pi/pi_garage_alertd" ]; then
 	echo	""												| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
 
-
+	nano /etc/postfix/sasl_passwd
+	
 	echo "Congratuation install Install_pi_garage_alert is now installed......." 				| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
 	
