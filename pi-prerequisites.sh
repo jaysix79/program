@@ -1,5 +1,5 @@
 #!/bin/bash
-## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
+## Bash Script to clear cached memory on (Ubuntu/Debian) Linux sudo resize2fs /dev/sda2
 ##	sudo /home/pi/programs/pi-prerequisites.sh.sh 
 ### BEGIN INIT INFO
 # Provides:          pi-prerequisites.sh
