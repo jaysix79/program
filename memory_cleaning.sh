@@ -20,8 +20,8 @@ then
   exit 1
 fi
 
-echo "# # # # # # # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-echo "# # # # # # # # #  # # # # # # # # Starting apt-get-memory_cleaning  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	    																| tee -a 	"$LOG_FILE"
+echo "# # # # # # # # Starting apt-get-memory_cleaning  # # # # # # # # # # # # # #"	   																	| tee -a 	"$LOG_FILE"
 date 																																						| tee -a 	"$LOG_FILE"
 
 
@@ -52,14 +52,14 @@ echo -e "This freed $(echo "$freemem_after - $freemem_before" | bc) MiB, so now 
 
 echo																																						| tee -a 	"$LOG_FILE"
 date																																						| tee -a 	"$LOG_FILE"
-echo "# # # # # # # # #  # # # # # # # #        memory_cleaning DONE!!       # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-echo "# # # # # # # # #  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+echo "# # # # # # # #        memory_cleaning DONE!!       # # # # # # # # # # # # #"	       																| tee -a 	"$LOG_FILE"
+echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	       																| tee -a 	"$LOG_FILE"
+echo																																						 | tee -a 	"$LOG_FILE"
 echo																																						| tee -a 	"$LOG_FILE"
 echo																																						| tee -a 	"$LOG_FILE"
-echo																									| tee -a 	"$LOG_FILE"
-echo																									| tee -a 	"$LOG_FILE"
-echo																									| tee -a 	"$LOG_FILE"
-echo																									| tee -a 	"$LOG_FILE"
+echo																																						| tee -a 	"$LOG_FILE"
+echo																																						| tee -a 	"$LOG_FILE"
+echo																																						| tee -a 	"$LOG_FILE"
 
 
 exit 0
