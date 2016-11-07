@@ -36,7 +36,7 @@ if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo "Installing pre-requisete......." 									| tee -a  	"$LOG_FILE"
-	sleep 2
+	sleep 5
 	
 	echo	""												| tee -a  	"$LOG_FILE"
 	sudo apt-get install python-setuptools python-dev libffi-dev						| tee -a  	"$LOG_FILE"
@@ -49,7 +49,7 @@ if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	apt-get -y install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules			| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo "Downloading pi_garage_alert......." 								| tee -a  	"$LOG_FILE"
-	sleep 2
+	sleep 5
 	
 	git clone https://github.com/rllynch/pi_garage_alert.git						| tee -a  	"$LOG_FILE"
 	
@@ -67,6 +67,9 @@ if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	cat /etc/ssl/certs/Thawte_Premium_Server_CA.pem | sudo tee -a /etc/postfix/cacert.pem			| tee -a  	"$LOG_FILE"
 	/etc/init.d/postfix reload										| tee -a  	"$LOG_FILE"
 	echo "test mail" | mail -s "test subject" 9494603641@txt.att.net					| tee -a  	"$LOG_FILE"
+	echo	""												| tee -a  	"$LOG_FILE"
+	echo "check your phone for a text....................................." 				| tee -a  	"$LOG_FILE"
+	sleep 5
 	echo	""												| tee -a  	"$LOG_FILE"
 	service pi_garage_alert restart										| tee -a  	"$LOG_FILE"
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
