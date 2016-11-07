@@ -17,7 +17,7 @@ LOG_FILE="/home/pi/log/install/Install_pi_garage_alert.log"
 if [ "$(whoami)" != "root" ]; then
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
-	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
+	echo -e "\e[31mYou have to run this script as Superuser! in order to install Install_pi_garage_alert\e[0m"	| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	exit 0
