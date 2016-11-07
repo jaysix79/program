@@ -15,15 +15,15 @@ LOG_FILE="/home/pi/log/install/Install_pi_garage_alert.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	clear
 	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
 	exit 0
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
 if [ -f "/usr/local/sbin/pi_garage_alert.py" ]; then
-	clear
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
 	echo "install Install_pi_garage_alert is already installed......."					| tee -a  	"$LOG_FILE"
 	exit 0
 fi
