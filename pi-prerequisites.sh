@@ -19,13 +19,13 @@ LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install pi-prerequisites.sh"
+	echo "You have to run this script as Superuser! in order to install pi-prerequisites.sh"		| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/home/pi/blynk-libraryX" ]; then
-	echo "install pi-prerequisites.sh is already installed......."
+if [ -d "/xxxx" ]; then
+	echo "install pi-prerequisites.sh is already installed......."						| tee -a 	"$LOG_FILE"
 	exit 1
 fi
 
@@ -46,13 +46,13 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 
 	sleep 4
 
-	echo ""																									| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
 	clear
 	echo "Installing samba........................................."					| tee -a 	"$LOG_FILE"
 	sleep 2
 	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
-	echo ""																									| tee -a 	"$LOG_FILE"
-	echo ""																									| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
+	echo ""													| tee -a 	"$LOG_FILE"
 	echo "Finalizing samba........................................."					| tee -a 	"$LOG_FILE"
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
@@ -74,7 +74,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "Samba password......." 										| tee -a 	"$LOG_FILE"
 	smbpasswd -a pi							 					| tee -a        "$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	echo "changing IP address to static XXX.XXX.XX.5"																									| tee -a 	"$LOG_FILE"
+	echo "changing IP address to static XXX.XXX.XX.5"							| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
@@ -88,7 +88,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	./basic-install.sh											| tee -a 	"$LOG_FILE"
 	rm ./basic-install.sh											| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
+	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
