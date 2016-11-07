@@ -33,8 +33,6 @@ if [ ! -d "/home/pi/SIP" ]; then
 	date 													| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 	apt-get install git											| tee -a 	"$LOG_FILE"	
-	apt-get update												| tee -a 	"$LOG_FILE"
-	apt-get upgrade												| tee -a 	"$LOG_FILE"
 	
 	echo "Downloading the source........ "									| tee -a 	"$LOG_FILE"
 	git clone https://github.com/Dan-in-CA/SIP 								| tee -a 	"$LOG_FILE"
