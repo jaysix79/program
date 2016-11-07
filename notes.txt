@@ -15,7 +15,8 @@ echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distribut
 echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
 
 wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
-
+sudo apt-get install apt-transport-https
+sudo apt-get update
 sudo apt-get install openhab2-offline
 
 sudo systemctl start openhab2.service
