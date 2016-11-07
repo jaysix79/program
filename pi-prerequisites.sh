@@ -30,7 +30,7 @@ if [ -d "/xxxx" ]; then
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -d "/home/pi/blynk-libraryX" ]; then
+if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
