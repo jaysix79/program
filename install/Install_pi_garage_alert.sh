@@ -58,6 +58,7 @@ if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	cp -v /home/pi/programs/backup/pi_garage_alert/init.d/pi_garage_alert /etc/init.d/			| tee -a  	"$LOG_FILE"
 	chown pi /usr/local/etc/pi_garage_alert_config.py							| tee -a  	"$LOG_FILE"
 	cp -v /home/pi/programs/backup/pi_garage_alert/email/sasl_passwd /etc/postfix/				| tee -a  	"$LOG_FILE"
+	nano /etc/postfix/sasl_passwd
 	cp -v /home/pi/programs/backup/pi_garage_alert/email/main.cf /etc/postfix/				| tee -a  	"$LOG_FILE"
 	chown pi /usr/local/sbin/pi_garage_alert.py								| tee -a  	"$LOG_FILE"
 	chmod +x /usr/local/sbin/pi_garage_alert.py								| tee -a  	"$LOG_FILE"
@@ -72,8 +73,7 @@ if [ ! -d "/home/pi/pi_garage_alert" ]; then
 	echo	""												| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
 
-	nano /etc/postfix/sasl_passwd
-	
+	sleep 5	
 	echo "Congratuation install Install_pi_garage_alert is now installed......." 				| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
 	
