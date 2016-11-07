@@ -1,3 +1,26 @@
 sudo apt-get install git
 git clone https://github.com/jaysix79/programs.git
 
+RESIZING PARTITION
+  sudo resize2fs /dev/sda2
+  
+  
+INSTALLING OPENHAB 2 ON PI
+
+sudo apt-get install oracle-java8-jdk
+echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+
+echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
+echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
+
+wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
+
+sudo apt-get install openhab2-offline
+
+sudo systemctl start openhab2.service
+sudo systemctl status openhab2.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable openhab2.service
+
