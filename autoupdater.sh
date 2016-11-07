@@ -22,15 +22,23 @@ echo ""													| tee -a 	"$LOG_FILE"
 	echo "Autocleaning........................"							| tee -a 	"$LOG_FILE"
 	sudo apt-get autoclean										| tee -a 	"$LOG_FILE"
 	echo ""												| tee -a 	"$LOG_FILE"
+	sleep 5
+	clear
 	echo "cleaning............................"							| tee -a 	"$LOG_FILE"
 	sudo apt-get clean										| tee -a 	"$LOG_FILE"
 	echo ""												| tee -a 	"$LOG_FILE"
+	sleep 5
+	clear
 	echo "Auto removing......................."							| tee -a 	"$LOG_FILE"
 	sudo apt-get -y autoremove									| tee -a 	"$LOG_FILE"
 	echo ""												| tee -a 	"$LOG_FILE"
+	sleep 5
+	clear
 	echo "Now system is being upgraded........"							| tee -a 	"$LOG_FILE"
 	sudo apt-get update										| tee -a 	"$LOG_FILE"
 	sudo apt-get -y dist-upgrade									| tee -a 	"$LOG_FILE"
+	sleep 5
+	
 echo ""													| tee -a 	"$LOG_FILE"
 date													| tee -a 	"$LOG_FILE"
 echo "# # # # # # # # # # # # # # # # #        autoupdater DONE!!     # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
