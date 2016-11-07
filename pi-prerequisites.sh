@@ -95,18 +95,18 @@ if [ ! -d "/xxxx" ]; then
 	
 	
 	## INSTALLING PIHOLE	
-	echo "Installing PiHole........................"							| tee -a 	"$LOG_FILE"
-	echo "" 												| tee -a 	"$LOG_FILE"
-	sleep 5
-	wget -O basic-install.sh https://install.pi-hole.net							| tee -a 	"$LOG_FILE"
-	chmod +x basic-install.sh										| tee -a 	"$LOG_FILE"
-	./basic-install.sh											| tee -a 	"$LOG_FILE"
-	rm ./basic-install.sh											| tee -a 	"$LOG_FILE"
-	echo "Samba Installed.................."								| tee -a 	"$LOG_FILE"
-	sleep 5
-	echo ""													| tee -a 	"$LOG_FILE"
-	echo ""													| tee -a 	"$LOG_FILE"
-	clear
+	#echo "Installing PiHole........................"							| tee -a 	"$LOG_FILE"
+	#echo "" 												| tee -a 	"$LOG_FILE"
+	#sleep 5
+	#wget -O basic-install.sh https://install.pi-hole.net							| tee -a 	"$LOG_FILE"
+	#chmod +x basic-install.sh										| tee -a 	"$LOG_FILE"
+	#./basic-install.sh											| tee -a 	"$LOG_FILE"
+	#rm ./basic-install.sh											| tee -a 	"$LOG_FILE"
+	#echo "Samba Installed.................."								| tee -a 	"$LOG_FILE"
+	#sleep 5
+	#echo ""													| tee -a 	"$LOG_FILE"
+	#echo ""													| tee -a 	"$LOG_FILE"
+	#clear
 	
 	chmod +x -Rv ./programs											| tee -a 	"$LOG_FILE"
 	echo "Congratuation install pi-prerequisites.sh is now installed......." 				| tee -a 	"$LOG_FILE"
