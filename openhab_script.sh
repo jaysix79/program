@@ -24,7 +24,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -f "/usr/local/sbin/pi_garage_alert.py" ]; then
+if [ -f "xxxxx" ]; then
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
@@ -36,7 +36,7 @@ fi
 
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -d "/home/pi/blynk-libraryX" ]; then
+if [ ! -d "xxxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # Starting apt-get openhab_script.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
