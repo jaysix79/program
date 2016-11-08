@@ -29,25 +29,49 @@ fi
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # Starting apt-get openhab_script.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-
+	date 													| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
 	
+	
+	## INSTALLING OPENHAB 2 ON PI
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
+	sleep 5
+	apt-get install screen mc vim git htop									| tee -a 	"$LOG_FILE"
+	apt-get install oracle-java8-jdk									| tee -a 	"$LOG_FILE"
+	echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+	wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 
+	echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
+	echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
 
-	echo "Congratuation install openhab_script.sh is now installed......." 									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
+	wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
+	apt-get install apt-transport-https									| tee -a 	"$LOG_FILE"
+	apt-get update												| tee -a 	"$LOG_FILE"
+	apt-get install openhab2-offline									| tee -a 	"$LOG_FILE"
+
+	systemctl start openhab2.service									| tee -a 	"$LOG_FILE"
+	systemctl status openhab2.service									| tee -a 	"$LOG_FILE"
+
+	systemctl daemon-reload											| tee -a 	"$LOG_FILE"
+	systemctl enable openhab2.service									| tee -a 	"$LOG_FILE"
+
+	echo "Congratuation install openhab_script.sh is now installed......." 					| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	sleep 5
+	date													| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #        openhab_script.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																								 	                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	echo " "												| tee -a 	"$LOG_FILE"
+	
 	exit 1
 fi
 
