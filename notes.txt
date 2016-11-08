@@ -7,6 +7,7 @@ RESIZING PARTITION
   
 INSTALLING OPENHAB 2 ON PI
 
+sudo apt-get install screen mc vim git htop
 sudo apt-get install oracle-java8-jdk
 echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
