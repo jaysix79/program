@@ -81,7 +81,8 @@ if [ ! -f "/usr/local/sbin/pi_garage_alert.py" ]; then
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
-	rm -R /home/pi/pi_garage_alert										| tee -a  	"$LOG_FI
+	update-rc.d pi_garage_alert defaults									| tee -a  	"$LOG_FILE"
+	rm -R /home/pi/pi_garage_alert										| tee -a  	"$LOG_FILE"
 	sleep 5													
 	echo "Congratuation install Install_pi_garage_alert is now installed......." 				| tee -a  	"$LOG_FILE"
 	echo	""												| tee -a  	"$LOG_FILE"
