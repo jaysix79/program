@@ -13,18 +13,27 @@
 mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/XXXXXXXXXXXX.log"
 
-
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install XXXXXXXXXXXX.sh"
-	exit 1
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to XXXXXXXXXXXX"				| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	exit 0
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/home/pi/blynk-libraryX" ]; then
-	echo "install XXXXXXXXXXXX.sh is already installed......."
-	exit 1
+if [ -f "xxx" ]; then
+	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "install XXXXXXXXXXXX is already installed......."							| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+exit 0
 fi
+
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
