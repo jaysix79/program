@@ -11,6 +11,17 @@
 ### END INIT INFO
 LOG_FILE="/home/pi/log/autoupdater.log"
 
+
+###	CHECKING IF IS BEING RUN AS ROOT
+if [ "$(whoami)" != "root" ]; then
+	echo ""												| tee -a  	"$LOG_FILE"
+	echo ""												| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to XXXXXXXXXXXX"			| tee -a  	"$LOG_FILE"
+	echo ""												| tee -a  	"$LOG_FILE"
+	echo ""												| tee -a  	"$LOG_FILE"
+	exit 0
+fi
+
 echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 echo "# # # # # # # # # # # # # # # # # Starting autoupdater  # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 date 													| tee -a 	"$LOG_FILE"
