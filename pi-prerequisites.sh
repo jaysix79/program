@@ -16,17 +16,25 @@
 mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 
-
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install pi-prerequisites.sh"		| tee -a 	"$LOG_FILE"
-	exit 1
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	exit 0
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "/xxxx" ]; then
-	echo "install pi-prerequisites.sh is already installed......."						| tee -a 	"$LOG_FILE"
-	exit 1
+if [ -f "/usr/local/sbin/pi_garage_alert.py" ]; then
+	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "install Install_pi_garage_alert is already installed......."					| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+exit 0
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
