@@ -13,18 +13,27 @@
 mkdir -p /home/pi/log/install/
 LOG_FILE="/home/pi/log/install/git_clone.log"
 
-
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]; then
-	echo "You have to run this script as Superuser! in order to install git_clone.sh"			| tee -a 	"$LOG_FILE"
-	exit 1
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	exit 0
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -d "xxx" ]; then
-	echo "install git_clone.sh is already installed......."							| tee -a 	"$LOG_FILE"
-	exit 1
+if [ -f "xxx" ]; then
+	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo "install Install_pi_garage_alert is already installed......."					| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+	echo ""													| tee -a  	"$LOG_FILE"
+exit 0
 fi
+
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "xxx" ]; then
