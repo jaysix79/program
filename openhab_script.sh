@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo sh /home/pi/programs/openhab_script.sh.sh 
+##	sudo sh /home/pi/programs/openhab_script.sh
 ### BEGIN INIT INFO
 # Provides:          openhab_script.sh
 # Required-Start:    $local_fs 
