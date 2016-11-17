@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo sh /home/pi/programs/install/samba_install.sh
+##	sudo sh /home/pi//programs/install/Install_samba.sh
 ##	to run blynk "node blynk.js 2f79d6db732040449192407b49934622"
 ##	auto start add this "/usr/local/lib/node_modules/blynk-library/blynk.js 2f79d6db732040449192407b49934622" on "sudo nano /etc/rc.local"
 ### BEGIN INIT INFO
