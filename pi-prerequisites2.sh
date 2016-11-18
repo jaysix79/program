@@ -44,6 +44,8 @@ if [ ! -d "/xxxx" ]; then
 	
 	
 	
+	
+	
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
