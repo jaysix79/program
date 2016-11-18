@@ -45,7 +45,7 @@ fi
 	echo "" 												| tee -a 	"$LOG_FILE"
 	
 	exit 1
-fi
+
 
 
 
