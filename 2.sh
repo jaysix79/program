@@ -63,13 +63,16 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			echo "Yes"
-			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "This will Sync with GitHub"									| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			/home/pi/programs/static_ip.sh 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
 			clear
-			echo "Skipped Syncing with GitHub"
+			echo "Skipped static IP address"
 			;;
 
 	    *)
