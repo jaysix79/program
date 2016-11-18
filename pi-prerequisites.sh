@@ -42,7 +42,7 @@ if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
-	echo /home/pi/programs/git_clone.sh 									| tee -a 	"$LOG_FILE"
+	sh /home/pi/programs/git_clone.sh 									| tee -a 	"$LOG_FILE"
 	
 	
 	## REMOVING UNNEEDED STUFF
