@@ -55,7 +55,7 @@ if [ ! -d "/xxxx" ]; then
 
 	    *)
 		echo "Invalid input..."
-		exit 1
+		#exit 1
 		;;
 	esac
 	
@@ -74,7 +74,7 @@ if [ ! -d "/xxxx" ]; then
 
 	    *)
 		echo "Invalid input..."
-		exit 1
+		#exit 1
 		;;
 	esac
 
