@@ -48,8 +48,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
+			clear
 			echo "Skipped Syncing with GitHub"
 			echo "" 												| tee -a 	"$LOG_FILE"
 			echo "" 												| tee -a 	"$LOG_FILE"
