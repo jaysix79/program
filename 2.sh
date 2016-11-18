@@ -36,7 +36,6 @@ if [ ! -d "/xxxx" ]; then
 	echo "You are Running the pi-prerequisites.sh script. This script is best to run right after a fresh Pi Installation" 												| tee -a 	"$LOG_FILE"
 		
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
-
 	case $input in
 	    [yY][eE][sS]|[yY])
 			echo "Yes"
@@ -45,6 +44,25 @@ if [ ! -d "/xxxx" ]; then
 
 	    [nN][oO]|[nN])
 			echo "Skip"
+			read -r -p "Are You Sure you want to continue? [Y/n] " input
+			case $input in
+			    [yY][eE][sS]|[yY])
+					echo "Yes"
+					#/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
+					#
+					;;
+
+			    [nN][oO]|[nN])
+					echo "Skip"
+					#
+					#
+					;;
+
+			    *)
+				echo "Invalid input..."
+				exit 1
+				;;
+			esac
 			;;
 
 	    *)
