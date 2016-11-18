@@ -40,10 +40,11 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			echo "Yes"
+			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
-			echo "No"
+			echo "Skip"
 			;;
 
 	    *)
