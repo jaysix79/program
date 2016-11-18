@@ -44,7 +44,7 @@ if [ ! -d "/xxxx" ]; then
 	date 													| tee -a 	"$LOG_FILE"
 	dpkg --configure -a											| tee -a 	"$LOG_FILE"
 	sh /home/pi/programs/git_clone.sh 									| tee -a 	"$LOG_FILE"
-	
+	apt-get install apt-transport-https
 	
 	## REMOVING UNNEEDED STUFF
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
