@@ -53,6 +53,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "This will change the IP address to 192.168.XX.5" 					| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			
 			read -r -p "Are You Sure you want to continue? [Y/n] " input
 			case $input in
@@ -63,15 +64,17 @@ if [ ! -d "/xxxx" ]; then
 					;;
 
 			    [nN][oO]|[nN])
-					echo "Skip"								| tee -a 	"$LOG_FILE"
-					#
-					#
+					echo "Skipping static IP address"							| tee -a 	"$LOG_FILE"
+					echo "" 										| tee -a 	"$LOG_FILE"
+					echo "" 										| tee -a 	"$LOG_FILE"
+					echo "This install SAMBA file sharing over network" 					| tee -a 	"$LOG_FILE"
+					echo "" 
 					;;
 					read -r -p "Are You Sure you want to continue? [Y/n] " input
 					case $input in
 					    [yY][eE][sS]|[yY])
 							echo "Yes"
-							/home/pi/programs/static_ip.sh				| tee -a 	"$LOG_FILE"
+							/home/pi/programs/install/Install_samba.sh		| tee -a 	"$LOG_FILE"
 							#
 							;;
 
