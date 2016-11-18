@@ -62,6 +62,7 @@ if [ ! -d "/xxxx" ]; then
 	## INSTALLING SAMBA
 	echo "Installing samba........................................."					| tee -a 	"$LOG_FILE"
 	sleep 5
+	#apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
 	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
