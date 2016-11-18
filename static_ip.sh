@@ -17,7 +17,7 @@ LOG_FILE="/home/pi/log/install/static_ip.log"
 if [ "$(whoami)" != "root" ]; then
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
-	echo "You have to run this script as Superuser! in order to static_ip"				| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to static_ip"					| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	exit 0
@@ -42,9 +42,15 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	date 													| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 
+	## MAKING IP ADDRESS STATIC	
+	echo "changing IP address to static XXX.XXX.XX.5"							| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	sleep 5
+	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
+	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
+	echo "IP address to static XXX.XXX.XX.5 .................."						| tee -a 	"$LOG_FILE"
+	sleep 5
 	
-	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
-
 
 	echo "Congratuation install static_ip.sh is now installed......." 					| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
