@@ -39,7 +39,8 @@ if [ ! -d "/xxxx" ]; then
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "This will Sync with GitHub"									| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-		
+	
+	##	sYNCING WITH GITHUB
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
@@ -50,30 +51,25 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			clear
 			echo "Skipped Syncing with GitHub"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "This will set IP to static IP address 192.168.xx.5" 						| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			read -r -p "Are You Sure you want to continue? [Y/n] " input
-			case $input in
-			    [yY][eE][sS]|[yY])
-					echo "Yes"
-					#/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
-					#
-					;;
+			;;
 
-			    [nN][oO]|[nN])
-					echo "Skip"
-					#
-					#
-					;;
+	    *)
+		echo "Invalid input..."
+		exit 1
+		;;
+	esac
+	
+	##	SETTING UP IP
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			echo "Yes"
+			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
+			;;
 
-			    *)
-				echo "Invalid input..."
-				exit 1
-				;;
-			esac
+	    [nN][oO]|[nN])
+			clear
+			echo "Skipped Syncing with GitHub"
 			;;
 
 	    *)
