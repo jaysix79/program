@@ -42,13 +42,13 @@ if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
-	echo "/home/pi/programs/git_clone.sh" 												| tee -a 	"$LOG_FILE"
+	echo /home/pi/programs/git_clone.sh 									| tee -a 	"$LOG_FILE"
 	
 	
 	## REMOVING UNNEEDED STUFF
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
 	sleep 5
-	apt-get purge -y pi-bluetooth bluez									| tee -a 	"$LOG_FILE"
+	#apt-get purge -y pi-bluetooth bluez									| tee -a 	"$LOG_FILE"
 	apt-get -y autoremove							        			| tee -a 	"$LOG_FILE"
 	apt-get -m update								          		| tee -a 	"$LOG_FILE"
 	apt-get  -y -m dist-upgrade					    					| tee -a 	"$LOG_FILE"
