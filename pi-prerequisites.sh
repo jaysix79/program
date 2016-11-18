@@ -83,6 +83,7 @@ if [ ! -d "/xxxx" ]; then
 	echo "Samba password......." 										| tee -a 	"$LOG_FILE"
 	smbpasswd -a pi							 					| tee -a        "$LOG_FILE"
 	echo "Samba Installed.................."								| tee -a 	"$LOG_FILE"
+	testparm												| tee -a 	"$LOG_FILE"
 	sleep 5
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
@@ -95,7 +96,7 @@ if [ ! -d "/xxxx" ]; then
 	sleep 5
 	mv -v /etc/dhcpcd.conf /etc/dhcpcd.conf.bak								| tee -a        "$LOG_FILE"
 	cp -rfv /home/pi/programs/backup/network/dhcpcd.conf /etc/dhcpcd.conf					| tee -a        "$LOG_FILE"
-	echo "Samba Installed.................."								| tee -a 	"$LOG_FILE"
+	echo "IP address to static XXX.XXX.XX.5 .................."						| tee -a 	"$LOG_FILE"
 	sleep 5
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
