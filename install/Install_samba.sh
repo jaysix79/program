@@ -42,7 +42,7 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo "Finalizing samba........................................."					| tee -a 	"$LOG_FILE"
 	mv -v /etc/samba/smb.conf /etc/samba/smb.conf.bak							| tee -a        "$LOG_FILE"
-	cp -rfv /home/pi/programs/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
+	#cp -rfv /home/pi/programs/backup/samba/smb.conf /etc/samba/smb.conf					| tee -a        "$LOG_FILE"
 	mkdir -pv /home/pi							 				| tee -a        "$LOG_FILE"
 	#mkdir -pv /usr/share/openhabi							 			| tee -a        "$LOG_FILE"
 	#mkdir -pv /etc/openhab							 				| tee -a        "$LOG_FILE"
