@@ -33,7 +33,12 @@ if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	echo "You are Running the pi-prerequisites.sh script. This script is best to run right after a fresh Pi Installation" 												| tee -a 	"$LOG_FILE"
+	echo "You are Running the pi-prerequisites.sh script."							| tee -a 	"$LOG_FILE"
+	echo "This script is best to run right after a fresh Pi Installation" 					| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "This will sync with Git Hub JaYsix79" 								| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
 		
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
@@ -43,20 +48,44 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			echo "Skip"
+			clear
+			echo "Skipping syncing with Git HUB"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "This will change the IP address to 192.168.XX.5" 					| tee -a 	"$LOG_FILE"
+			
 			read -r -p "Are You Sure you want to continue? [Y/n] " input
 			case $input in
 			    [yY][eE][sS]|[yY])
 					echo "Yes"
-					#/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
+					/home/pi/programs/static_ip.sh						| tee -a 	"$LOG_FILE"
 					#
 					;;
 
 			    [nN][oO]|[nN])
-					echo "Skip"
+					echo "Skip"								| tee -a 	"$LOG_FILE"
 					#
 					#
 					;;
+					read -r -p "Are You Sure you want to continue? [Y/n] " input
+					case $input in
+					    [yY][eE][sS]|[yY])
+							echo "Yes"
+							/home/pi/programs/static_ip.sh				| tee -a 	"$LOG_FILE"
+							#
+							;;
+
+					    [nN][oO]|[nN])
+							echo "Skip"						| tee -a 	"$LOG_FILE"
+							#
+							#
+							;;
+
+					    *)
+						echo "Invalid input..."
+						exit 1
+						;;
+					esac
 
 			    *)
 				echo "Invalid input..."
