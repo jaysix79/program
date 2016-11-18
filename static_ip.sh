@@ -37,8 +37,8 @@ fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
-	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get static_ip.sh  # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #  Starting apt-get static_ip.sh  # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 	date 													| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 
@@ -55,8 +55,8 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "Congratuation install static_ip.sh is now installed......." 					| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 	date													| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        static_ip.sh DONE!!       # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        static_ip.sh DONE!!     	  # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
 	echo													| tee -a 	"$LOG_FILE"
