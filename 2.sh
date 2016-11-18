@@ -28,26 +28,28 @@ fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/xxxx" ]; then
+	clear
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	
-	
-read -r -p "Are You Sure? [Y/n] " input
+	echo "" 												| tee -a 	"$LOG_FILE"
+	echo "" 												| tee -a 	"$LOG_FILE"
+		
+	read -r -p "Are You Sure? [Y/n] " input
 
-case $input in
-    [yY][eE][sS]|[yY])
-		echo "Yes"
+	case $input in
+	    [yY][eE][sS]|[yY])
+			echo "Yes"
+			;;
+
+	    [nN][oO]|[nN])
+			echo "No"
+			;;
+
+	    *)
+		echo "Invalid input..."
+		exit 1
 		;;
-
-    [nN][oO]|[nN])
-		echo "No"
-       		;;
-
-    *)
-	echo "Invalid input..."
-	exit 1
-	;;
-esac
+	esac
 
 	
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
