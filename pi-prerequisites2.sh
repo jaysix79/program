@@ -32,7 +32,8 @@ fi
 
 
 
-
+###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
+if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # #        pi-prerequisites2.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
@@ -46,7 +47,7 @@ fi
 	
 	exit 1
 
-
+fi
 
 
 
