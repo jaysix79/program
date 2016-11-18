@@ -48,7 +48,14 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			echo "Skip"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "Skipped Syncing with GitHub"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "This will set IP to static IP address 192.168.xx.5" 						| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
 			read -r -p "Are You Sure you want to continue? [Y/n] " input
 			case $input in
 			    [yY][eE][sS]|[yY])
