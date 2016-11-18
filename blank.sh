@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo sh /home/pi/programs/XXXXXXXXXXXX.sh.sh 
+##	sudo sh /home/pi/programs/XXXXXXXXXXXX.sh 
 ### BEGIN INIT INFO
 # Provides:          XXXXXXXXXXXX.sh
 # Required-Start:    $local_fs 
@@ -38,25 +38,26 @@ fi
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get XXXXXXXXXXXX.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # # Starting apt-get XXXXXXXXXXXX.sh  # # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
+	date 													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
 
 	
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
 
 
-	echo "Congratuation install XXXXXXXXXXXX.sh is now installed......." 									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        XXXXXXXXXXXX.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "Congratuation install XXXXXXXXXXXX.sh is now installed......." 					| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	date													| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        XXXXXXXXXXXX.sh DONE!!       # # # # # # # # # # # # # # # # # #"		| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																								 	                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
 
 	exit 1
 fi
