@@ -32,18 +32,13 @@ if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	
 	
-	confirm () {
-	    # call with a prompt string or use a default
-	    read -r -p "${1:-Are you sure? [y/N]} " response
-	    case $response in
-		[yY][eE][sS]|[yY]) 
-		    true
-		    ;;
-		*)
-		    false
-		    ;;
-	    esac
-	}
+	read -r -p "Are you sure? [y/N] " response
+	if [[ $response =~ ^([yY][eE][sS]|[yY])$ ]]
+	then
+	    do_something
+	else
+	    do_something_else
+	fi
 
 	
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
