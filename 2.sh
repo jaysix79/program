@@ -32,14 +32,22 @@ if [ ! -d "/xxxx" ]; then
 	echo "# # # # # # # #  Starting apt-get pi-prerequisites.sh   # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	
 	
-while true; do
-    read -p "Do you wish to install this program?" yn
-    case $yn in
-        [Yy]* ) make install; break;;
-        [Nn]* ) exit;;
-        * ) echo "Please answer yes or no.";;
-    esac
-done
+read -r -p "Are You Sure? [Y/n] " input
+
+case $input in
+    [yY][eE][sS]|[yY])
+		echo "Yes"
+		;;
+
+    [nN][oO]|[nN])
+		echo "No"
+       		;;
+
+    *)
+	echo "Invalid input..."
+	exit 1
+	;;
+esac
 
 	
 	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
