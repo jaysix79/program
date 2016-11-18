@@ -17,7 +17,7 @@ LOG_FILE="/home/pi/log/install/homeassistant_initializing.sh.log"
 if [ "$(whoami)" != "root" ]; then
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
-	echo "You have to run this script as Superuser! in order to homeassistant_initializing.sh"				| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to homeassistant_initializing.sh"		| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	exit 0
@@ -28,7 +28,7 @@ if [ -f "xxx" ]; then
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
-	echo "install homeassistant_initializing is already installed......."							| tee -a  	"$LOG_FILE"
+	echo "install homeassistant_initializing is already installed......."					| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 exit 0
@@ -38,25 +38,35 @@ fi
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
 if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get homeassistant_initializing.sh  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	date 																									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-
+	echo "# # # # # # # # Starting apt-get homeassistant_initializing.sh  # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	date 													| tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	
+	systemctl stop home-assistant@homeassistant.service 							| tee -a 	"$LOG_FILE"
+	su -s /bin/bash homeassistant										| tee -a 	"$LOG_FILE"
+	source /srv/homeassistant/bin/activate									| tee -a 	"$LOG_FILE"
+	pip3 install --upgrade homeassistant									| tee -a 	"$LOG_FILE"
+	exit
+	systemctl start home-assistant@homeassistant.service							| tee -a 	"$LOG_FILE"
+	
 	
 	echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
 
 
-	echo "Congratuation install homeassistant_initializing.sh is now installed......." 									| tee -a 	"$LOG_FILE"
-	echo																									| tee -a 	"$LOG_FILE"
-	date																									| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        homeassistant_initializing.sh DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "Congratuation install homeassistant_initializing.sh is now installed......." 			| tee -a 	"$LOG_FILE"
+	echo													| tee -a 	"$LOG_FILE"
+	date													| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        homeassistant_initializing.sh DONE!!       # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo																								 	                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
-	echo																									                                                | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+	echo								                             	        | tee -a 	"$LOG_FILE"
+
 
 	exit 1
 fi
