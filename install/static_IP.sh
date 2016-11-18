@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	sudo sh /home/pi/programs/XXXXXXXXXXXX.sh 
+##	sudo sh /home/pi/programs/install/XXXXXXXXXXXX.sh 
 ### BEGIN INIT INFO
 # Provides:          XXXXXXXXXXXX.sh
 # Required-Start:    $local_fs 
