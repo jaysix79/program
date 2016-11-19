@@ -100,7 +100,7 @@ if [ ! -d "/xxxx" ]; then
 	esac
 	
 	
-	##	SETTING UP IP
+	##	SAMBA INSTALLATION
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
@@ -109,8 +109,8 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			#echo "This install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
-			#echo "" 										| tee -a 	"$LOG_FILE"
+			echo "This install  file sharing over the network "				| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -118,7 +118,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped SAMBA installation"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			##
+			echo "This install SIP open sprinkler for Pi"				| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
@@ -128,7 +128,43 @@ if [ ! -d "/xxxx" ]; then
 		echo "Invalid input..."
 		#exit 1
 		;;
+	
 	esac
+	##	INSTALLING SIP open sprinkler for Pi
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			###/home/pi/programs/install/Install_sip_sprinkler.sh 						| tee -a 	"$LOG_FILE"
+			clear
+			echo "Successfully Installed SIP open sprinkler for Pi"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			#echo "This install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
+			#echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    [nN][oO]|[nN])
+			clear
+			echo "Skipped SIP open sprinkler for Pi installation"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			##
+			#echo "" 										| tee -a 	"$LOG_FILE"
+			#echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		clear
+		echo "Invalid input..."
+		#exit 1
+		;;
+	esac
+
+
+
+
+
+
 
 	
 	echo "Please reboot your computer for the change to take effect!!!"					| tee -a 	"$LOG_FILE"
