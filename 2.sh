@@ -65,6 +65,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    *)
+		clear
 		echo "Invalid input..."
 		#exit 1
 		;;
@@ -95,6 +96,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    *)
+		clear
 		echo "Invalid input..."
 		#exit 1
 		;;
