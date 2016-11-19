@@ -37,8 +37,40 @@ if [ ! -d "/xxxx" ]; then
 	echo "This script is best to run right after a fresh Pi Installation" 					| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	echo "Now this will Sync with GitHub"									| tee -a 	"$LOG_FILE"
+	echo "Now this will clean and update the system"							| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
+	
+	##	Cleaning and Updating INSTALLATION
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			/home/pi/programs/install/Initial_Pi_Update.sh 						| tee -a 	"$LOG_FILE"
+			clear
+			echo "Successfully Cleaned and Updated"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Now this sync with Github"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    [nN][oO]|[nN])
+			clear
+			echo "Skipped Cleaning and Updating"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Now this Now this sync with Github"						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		clear
+		echo "Invalid input..."
+		#exit 1
+		;;
+	
+	esac
+	
 	
 	##	sYNCING WITH GITHUB
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
@@ -47,7 +79,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Yes"
 			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
 			clear
-			echo "Successfully synced with Github"							| tee -a 	"$LOG_FILE"
+			echo "Successfully cleaned and updated the system"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
