@@ -65,7 +65,7 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			echo "" 												| tee -a 	"$LOG_FILE"
 			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "This will Sync with GitHub"									| tee -a 	"$LOG_FILE"
+			echo "This will set IP address to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
 			echo "" 												| tee -a 	"$LOG_FILE"
 			/home/pi/programs/static_ip.sh 										| tee -a 	"$LOG_FILE"
 			;;
