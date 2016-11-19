@@ -51,6 +51,10 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			clear
 			echo "Skipped Syncing with GitHub"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "This will set IP address to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
+			echo "" 												| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -63,11 +67,6 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			clear
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "This will set IP address to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
 			/home/pi/programs/static_ip.sh 										| tee -a 	"$LOG_FILE"
 			;;
 
