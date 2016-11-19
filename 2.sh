@@ -37,7 +37,7 @@ if [ ! -d "/xxxx" ]; then
 	echo "This script is best to run right after a fresh Pi Installation" 					| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	echo "This will Sync with GitHub"									| tee -a 	"$LOG_FILE"
+	echo "Now this will Sync with GitHub"									| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	
 	##	sYNCING WITH GITHUB
@@ -50,7 +50,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully synced with Github"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "This will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
+			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -59,7 +59,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped Syncing with GitHub"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "This will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
+			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -79,7 +79,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully changed IP address  to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "This install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
+			echo "Now this install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -88,8 +88,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped static IP address"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			##
-			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Now  his install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
