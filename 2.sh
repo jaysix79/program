@@ -63,6 +63,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
+			clear
 			echo "" 												| tee -a 	"$LOG_FILE"
 			echo "" 												| tee -a 	"$LOG_FILE"
 			echo "This will set IP address to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
