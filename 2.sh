@@ -128,10 +128,10 @@ if [ ! -d "/xxxx" ]; then
 		echo "Invalid input..."
 		#exit 1
 		;;
-esac
+	esac
 
 	
-	echo "Please reboot your computer for the change to take effect!!!"	| tee -a 	"$LOG_FILE"
+	echo "Please reboot your computer for the change to take effect!!!"					| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
