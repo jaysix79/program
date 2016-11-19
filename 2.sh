@@ -99,10 +99,40 @@ if [ ! -d "/xxxx" ]; then
 		#exit 1
 		;;
 	esac
+	
+	
+	##	SETTING UP IP
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			###/home/pi/programs/install/Install_samba.sh 								| tee -a 	"$LOG_FILE"
+			clear
+			echo "Successfully Installed"								| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			#echo "This install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
+			#echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    [nN][oO]|[nN])
+			clear
+			echo "Skipped SAMBA installation"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			##
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		clear
+		echo "Invalid input..."
+		#exit 1
+		;;
+esac
 
 	
-	echo "# # # # # # # #        pi-prerequisites.sh DONE!!         # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "Please reboot your computer for the change to take effect!!!"	| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
