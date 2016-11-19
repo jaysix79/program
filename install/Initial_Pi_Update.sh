@@ -45,7 +45,8 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	## REMOVING UNNEEDED STUFF
 	#echo "Removing unneeded stuff.........."								| tee -a 	"$LOG_FILE"
 	#apt-get purge -y pi-bluetooth bluez									| tee -a 	"$LOG_FILE"
-	#apt-get -y autoremove													| tee -a 	"$LOG_FILE"
+	apt-get clean
+	apt-get -y autoremove													| tee -a 	"$LOG_FILE"
 	apt-get -y update														| tee -a 	"$LOG_FILE"
 	apt-get -y upgrade						    							| tee -a 	"$LOG_FILE"
 	#echo "Unneeded stuff removed..........."								| tee -a "$LOG_FILE"
