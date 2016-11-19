@@ -109,7 +109,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "This install  file sharing over the network "				| tee -a 	"$LOG_FILE"
+			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -118,7 +118,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped SAMBA installation"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "This install SIP open sprinkler for Pi"				| tee -a 	"$LOG_FILE"
+			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
@@ -130,6 +130,8 @@ if [ ! -d "/xxxx" ]; then
 		;;
 	
 	esac
+	
+	
 	##	INSTALLING SIP open sprinkler for Pi
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
