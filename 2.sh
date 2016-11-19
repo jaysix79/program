@@ -46,15 +46,22 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			echo "Yes"
 			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Successfully synced with Github"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "This will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
 			clear
 			echo "Skipped Syncing with GitHub"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
-			echo "This will set IP address to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
-			echo "" 												| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "This will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -67,7 +74,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/static_ip.sh 										| tee -a 	"$LOG_FILE"
+			/home/pi/programs/static_ip.sh 								| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
