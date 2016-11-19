@@ -24,7 +24,7 @@ if [ "$(whoami)" != "root" ]; then
 fi
 
 ###	CHECKING IF THE FOLDER EXIST
-if [ -f "/usr/local/sbin/pi_garage_alert.py" ]; then
+if [ -f "/usr/local/sbin/pi_garage_alert.pyd" ]; then
 	service pi_garage_alert status										| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
@@ -35,7 +35,7 @@ exit 0
 fi
 
 ###	IF FOLDER DOESNT EXIT THEN LETS INSTALL
-if [ ! -f "/usr/local/sbin/pi_garage_alert.py" ]; then
+if [ ! -f "/usr/local/sbin/pi_garage_alert.pyd" ]; then
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	echo "# # # # # # #   Starting apt-get Install_pi_garage_alert  # # # # # # # # # # # # # # # # # #"	| tee -a  	"$LOG_FILE"
 	date 													| tee -a  	"$LOG_FILE"
