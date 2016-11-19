@@ -109,7 +109,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
+			echo "Now this install Garage Notification for Pi using GPIO "				| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -118,7 +118,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped SAMBA installation"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
+			echo "Now this install Garage Notification for Pi using GPIO "				| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
