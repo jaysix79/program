@@ -2,7 +2,7 @@ sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install git
 git clone https://github.com/jaysix79/programs.git
-
+sudo chmod a+x /home/pi/programs/pi-prerequisites.sh
 sudo sh /home/pi/programs/pi-prerequisites.sh
 
 RESIZING PARTITION
