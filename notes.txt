@@ -5,6 +5,8 @@ sudo sh /home/pi/programs/git_clone.sh
 sudo sh /home/pi/programs/pi-prerequisites.sh
 
 RESIZING PARTITION
+sudo fdisk -l
+sudo fdisk /dev/sda
   sudo resize2fs /dev/sda2
   
   
