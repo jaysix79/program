@@ -7,7 +7,7 @@
 # Describes all the garage doors being monitored
 GARAGE_DOORS = [
     {
-        'pin': 26,
+        'pin': 40,
         'name': "GARAGE DOOR (HOME)",
         'alerts': [
             {
@@ -20,7 +20,7 @@ GARAGE_DOORS = [
     },
 
     {
-        'pin': 26,
+        'pin': 40,
         'name': "REMINDER: Garage door",
         'alerts': [
             {
