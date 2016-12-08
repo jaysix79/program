@@ -37,7 +37,8 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	
 	echo "Installing samba........................................."					| tee -a 	"$LOG_FILE"
 	sleep 2
-	apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
+	#apt-get -y install libcups2 samba samba-common cups							| tee -a        "$LOG_FILE"
+	apt-get -y install samba samba-common-bin 								| tee -a        "$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo ""													| tee -a 	"$LOG_FILE"
 	echo "Finalizing samba........................................."					| tee -a 	"$LOG_FILE"
