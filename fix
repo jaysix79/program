@@ -11,3 +11,12 @@ proc            /proc           proc    defaults          0       0
 
 to edit 
 use sudo -e /etc/fstab
+
+
+files list file for package 'XXXXX' is missing final newline
+
+sudo rm /var/lib/dpkg/info/XXXXX.list
+sudo apt-get install --reinstall "XXXXX"
+sudo apt-get purge XXXXX
+sudo dpkg --configure -a
+sudo apt-get install --reinstall "XXXXX"
