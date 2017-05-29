@@ -9,4 +9,5 @@ proc            /proc           proc    defaults          0       0
 
 
 
-
+to edit 
+use sudo -e /etc/fstab
