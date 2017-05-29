@@ -1,0 +1,12 @@
+bad fstab raspberry pit
+
+
+default is 
+
+proc            /proc           proc    defaults          0       0
+/dev/sda1  /boot           vfat    defaults          0       0
+/dev/sda2  /               ext4    defaults,noatime  0       0
+
+
+
+
