@@ -35,7 +35,7 @@ if [ ! -d "/home/pi/SIP" ]; then
 	apt-get install git											| tee -a 	"$LOG_FILE"	
 	
 	echo "Downloading the source........ "									| tee -a 	"$LOG_FILE"
-	git clone https://github.com/Dan-in-CA/SIP 								| tee -a 	"$LOG_FILE"
+	git clone https://github.com/jaysix79/SIP 								| tee -a 	"$LOG_FILE"
 	sleep 2
 	
 	clear
