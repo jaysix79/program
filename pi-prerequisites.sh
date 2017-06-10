@@ -168,7 +168,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/install/Install_pi_garage_alert.sh 						| tee -a 	"$LOG_FILE"
+			#/home/pi/programs/install/Install_pi_garage_alert.sh 						| tee -a 	"$LOG_FILE"
 			clear
 			echo "Successfully Installed Garage Notification for Pi using GPIO"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
