@@ -38,3 +38,8 @@ sudo systemctl enable openhab2.service
 fixing write only PI
 sudo fsck -fp /dev/sda2
 sudo mount /dev/sda2 /
+
+
+proc            /proc           proc    defaults          0       0
+/dev/sda1       /boot           vfat    defaults          0       0
+/dev/sda2       /               ext4    defaults,noatime  0       0
