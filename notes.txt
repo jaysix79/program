@@ -35,3 +35,6 @@ sudo systemctl status openhab2.service
 sudo systemctl daemon-reload
 sudo systemctl enable openhab2.service
 
+fixing write only PI
+sudo fsck -fp /dev/sda2
+sudo mount /dev/sda2 /
