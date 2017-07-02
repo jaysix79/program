@@ -40,36 +40,6 @@ if [ ! -d "/xxxx" ]; then
 	echo "Now this will clean and update the system"							| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	
-	##	Cleaning and Updating INSTALLATION
-	read -r -p "Are You Sure you want to continue? [Y/n] " input
-	case $input in
-	    [yY][eE][sS]|[yY])
-	#		/home/pi/programs/install/Initial_Pi_Update.sh 						| tee -a 	"$LOG_FILE"
-			clear
-			echo "Successfully Cleaned and Updated"							| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this sync with Github"							| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			;;
-
-	    [nN][oO]|[nN])
-			clear
-			echo "Skipped Cleaning and Updating"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this Now this sync with Github"						| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			;;
-
-	    *)
-		clear
-		echo "Invalid input..."
-		#exit 1
-		;;
-	
-	esac
 	
 	
 	##	sYNCING WITH GITHUB
