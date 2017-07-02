@@ -44,7 +44,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/install/Initial_Pi_Update.sh 						| tee -a 	"$LOG_FILE"
+	#		/home/pi/programs/install/Initial_Pi_Update.sh 						| tee -a 	"$LOG_FILE"
 			clear
 			echo "Successfully Cleaned and Updated"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -168,7 +168,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/install/Install_pi_garage_alert.sh 						| tee -a 	"$LOG_FILE"
+	#		/home/pi/programs/install/Install_pi_garage_alert.sh 						| tee -a 	"$LOG_FILE"
 			clear
 			echo "Successfully Installed Garage Notification for Pi using GPIO"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -200,7 +200,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/install/Install_sip_sprinkler.sh 						| tee -a 	"$LOG_FILE"
+	#		/home/pi/programs/install/Install_sip_sprinkler.sh 						| tee -a 	"$LOG_FILE"
 			clear
 			echo "Successfully Installed SIP open sprinkler for Pi"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
