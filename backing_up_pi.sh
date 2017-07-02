@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
-##	 sudo sh /home/pi/programs/backup_pi_garage_alert.sh 
+##	 sudo sh /home/pi/programs/backing_up_pi.sh 
 ### BEGIN INIT INFO
 # Provides:          backup_pi_garage_alert
 # Required-Start:    $local_fs 
@@ -11,17 +11,17 @@
 ### END INIT INFO
 
 mkdir -p /home/pi/log/install
-LOG_FILE="/home/pi/log/backup_pi_garage_alert.log"
+LOG_FILE="/home/pi/log/backing_up_pi.log"
 
 ###	CHECKING IF IS BEING RUN AS ROOT
 if [ "$(whoami)" != "root" ]
 then
-	echo "You have to run this script as Superuser! in order to install Install_WebIOPi"
+	echo "You have to run this script as Superuser! in order to run backing_up_pi.sh "
 	exit 1
 fi
 
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # # Starting apt-get-backup_pi_garage_alert  # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #          Starting backing_up_pi.sh      # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	date 																									| tee -a 	"$LOG_FILE"
 	echo																									| tee -a 	"$LOG_FILE"
 
@@ -39,7 +39,7 @@ fi
 	#mkdir -p /home/pi/backup/ 																				| tee -a 	"$LOG_FILE"
 	#mkdir -p /home/pi/backup/ 																				| tee -a 	"$LOG_FILE"
 	echo																									| tee -a 	"$LOG_FILE"
-	sudo tar -zcf /home/pi/backup/PiHome.tgz /home/															| tee -a 	"$LOG_FILE"
+	sudo tar -zcf /home/pi/backup/PiHome$(date +%H%M-%d-%m-%Y).tgz /home/ --exclude='*.tgz'					| tee -a 	"$LOG_FILE"
 	
 	## BACKUP GARAGE SETTINGS
 	rsync -av /usr/local/sbin/pi_garage_alert.py /home/pi/backup/pi_garage_alert/bin/      					| tee -a 	"$LOG_FILE"
@@ -79,7 +79,7 @@ fi
 	
 	echo																									| tee -a 	"$LOG_FILE"
 	date																									| tee -a 	"$LOG_FILE"
-	echo "# # # # # # # #        backup_pi_garage_alert DONE!!       # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
+	echo "# # # # # # # #        /home/pi/programs/backing_up_pi DONE!!       # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo "# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #"	| tee -a 	"$LOG_FILE"
 	echo																									| tee -a 	"$LOG_FILE"
 	echo																									| tee -a 	"$LOG_FILE"

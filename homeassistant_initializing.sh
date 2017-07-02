@@ -44,10 +44,10 @@ if [ ! -d "/home/pi/blynk-libraryX" ]; then
 	
 	systemctl stop home-assistant@homeassistant.service 							| tee -a 	"$LOG_FILE"
 	su -s /bin/bash homeassistant										| tee -a 	"$LOG_FILE"
-	source /srv/homeassistant/bin/activate									| tee -a 	"$LOG_FILE"
+	echo source /srv/homeassistant/bin/activate									| tee -a 	"$LOG_FILE"
 	pip3 install --upgrade homeassistant									| tee -a 	"$LOG_FILE"
 	sleep 5
-	exit
+	echo exit
 	systemctl start home-assistant@homeassistant.service							| tee -a 	"$LOG_FILE"
 	
 	

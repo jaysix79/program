@@ -20,7 +20,7 @@ LOG_FILE="/home/pi/log/install/pi-prerequisites.log"
 if [ "$(whoami)" != "root" ]; then
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
-	echo "You have to run this script as Superuser! in order to install pi-prerequisites"		| tee -a  	"$LOG_FILE"
+	echo "You have to run this script as Superuser! in order to install Install_pi_garage_alert"		| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	echo ""													| tee -a  	"$LOG_FILE"
 	exit 0
