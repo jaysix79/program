@@ -27,3 +27,6 @@ sudo systemctl status home-assistant@homeassistant.service
 
 
 exit 1
+
+
+added right now

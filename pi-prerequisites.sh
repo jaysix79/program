@@ -35,12 +35,10 @@ if [ ! -d "/xxxx" ]; then
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "You are Running the pi-prerequisites.sh script."							| tee -a 	"$LOG_FILE"
 	echo "This script is best to run right after a fresh Pi Installation" 					| tee -a 	"$LOG_FILE"
+	echo "First I will SYNC with GitHub......." 								| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-	echo "Now this will clean and update the system"							| tee -a 	"$LOG_FILE"
-	echo "" 												| tee -a 	"$LOG_FILE"
-	
-	
+
 	
 	##	sYNCING WITH GITHUB
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
@@ -49,7 +47,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Yes"
 			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
 			clear
-			echo "Successfully cleaned and updated the system"					| tee -a 	"$LOG_FILE"
+			echo "Successfully SYNCed with GitHub......."						| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
@@ -76,7 +74,7 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			/home/pi/programs/static_ip.sh 							| tee -a 	"$LOG_FILE"
+			/home/pi/programs/static_ip.sh 								| tee -a 	"$LOG_FILE"
 			clear
 			echo "Successfully changed IP address  to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -111,7 +109,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install Garage Notification for Pi using GPIO "				| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
@@ -120,7 +118,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "Skipped SAMBA installation"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install Garage Notification for Pi using GPIO "				| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
@@ -139,7 +137,40 @@ if [ ! -d "/xxxx" ]; then
 
 
 
+	##	Do you want to add the custom commands  
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			chmod +x /home/pi/programs/command/HAupdate						| tee -a 	"$LOG_FILE"
+			cp -a /home/pi/programs/command/HAupdate /usr/bin/HAupdate				| tee -a 	"$LOG_FILE"
+			chmod +x /home/pi/programs/command/HArestart						| tee -a 	"$LOG_FILE"
+			cp -a /home/pi/programs/command/HArestart /usr/bin/HArestart 				| tee -a 	"$LOG_FILE"
+			sleep 5
+			clear
+			echo "Successfully added the custom commands"						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Now this install done "								| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
 
+	    [nN][oO]|[nN])
+			clear
+			echo "Skipped adding the custom commands"						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Now this install done "								| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		clear
+		echo "Invalid input..."
+		#exit 1
+		;;
+	
+	esac
 
 
 

@@ -1,0 +1,23 @@
+#!/bin/bash
+## Bash Script to clear cached memory on (Ubuntu/Debian) Linux
+##	sudo sh /home/pi/programs/command/NEWW.sh
+### BEGIN INIT INFO
+# Provides:          NEWW.sh
+# Required-Start:    $local_fs 
+# Required-Stop:     $local_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: update_hass.sh
+### END INIT INFO
+
+mkdir -p /home/pi/log/install
+LOG_FILE="/home/pi/log/NEWW.log"
+
+#systemctl stop home-assistant@homeassistant.service          | tee -a 	"$LOG_FILE"
+
+#start command#
+
+
+
+
+exit 1
