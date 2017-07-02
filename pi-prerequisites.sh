@@ -134,67 +134,9 @@ if [ ! -d "/xxxx" ]; then
 	esac
 	
 	
-	##	Garage Notification for Pi using GPIO INSTALLATION
-	read -r -p "Are You Sure you want to continue? [Y/n] " input
-	case $input in
-	    [yY][eE][sS]|[yY])
-	#		/home/pi/programs/install/Install_pi_garage_alert.sh 						| tee -a 	"$LOG_FILE"
-			clear
-			echo "Successfully Installed Garage Notification for Pi using GPIO"							| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			;;
-
-	    [nN][oO]|[nN])
-			clear
-			echo "Skipped Garage Notification for Pi using GPIO installation"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install SIP open sprinkler for Pi"					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			;;
-
-	    *)
-		clear
-		echo "Invalid input..."
-		#exit 1
-		;;
-	
-	esac
 	
 	
-	##	INSTALLING SIP open sprinkler for Pi
-	read -r -p "Are You Sure you want to continue? [Y/n] " input
-	case $input in
-	    [yY][eE][sS]|[yY])
-	#		/home/pi/programs/install/Install_sip_sprinkler.sh 						| tee -a 	"$LOG_FILE"
-			clear
-			echo "Successfully Installed SIP open sprinkler for Pi"							| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			#echo "This install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
-			#echo "" 										| tee -a 	"$LOG_FILE"
-			;;
 
-	    [nN][oO]|[nN])
-			clear
-			echo "Skipped SIP open sprinkler for Pi installation"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			##
-			#echo "" 										| tee -a 	"$LOG_FILE"
-			#echo "" 										| tee -a 	"$LOG_FILE"
-			;;
-
-	    *)
-		clear
-		echo "Invalid input..."
-		#exit 1
-		;;
-	esac
 
 
 
