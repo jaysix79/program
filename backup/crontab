@@ -23,9 +23,9 @@
 
 
 
-0 23 */2 * *	 	service pi_garage_alert restart
-0 0 */2 * * 		sh /home/pi/programs/backing_up_pi.sh
+#0 23 */2 * * service pi_garage_alert restart
+0 0 */2 * *   sh /home/pi/programs/backing_up_pi.sh
 30 2 * * * 		postsuper -d ALL
 35 2 * * * 		postfix flush
 15 * * * *		sh /home/pi/programs/memory_cleaning.sh 
-0 23 */2 * *            sh /home/pi/programs/autoupdater.sh 
+0 23 */2 * *  sh /home/pi/programs/autoupdater.sh 
