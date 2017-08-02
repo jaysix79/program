@@ -141,10 +141,10 @@ if [ ! -d "/xxxx" ]; then
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
 	case $input in
 	    [yY][eE][sS]|[yY])
-			chmod +x /home/pi/programs/command/HAupdate						| tee -a 	"$LOG_FILE"
-			cp -a /home/pi/programs/command/HAupdate /usr/bin/HAupdate				| tee -a 	"$LOG_FILE"
-			chmod +x /home/pi/programs/command/HArestart						| tee -a 	"$LOG_FILE"
-			cp -a /home/pi/programs/command/HArestart /usr/bin/HArestart 				| tee -a 	"$LOG_FILE"
+			chmod +x /home/pi/programs/command/HAupdate/*						| tee -a 	"$LOG_FILE"
+			cp -a /home/pi/programs/command/HAupdate/* /usr/bin/HAupdate				| tee -a 	"$LOG_FILE"
+			#chmod +x /home/pi/programs/command/HArestart						| tee -a 	"$LOG_FILE"
+			#cp -a /home/pi/programs/command/HArestart /usr/bin/HArestart 				| tee -a 	"$LOG_FILE"
 			sleep 5
 			clear
 			echo "Successfully added the custom commands"						| tee -a 	"$LOG_FILE"
