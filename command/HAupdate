@@ -14,8 +14,8 @@ mkdir -p /home/pi/log/install
 LOG_FILE="/home/pi/log/HAupdate.log"
 
 
-rm /home/homeassistant/.homeassistant/home-assistant.log     | tee -a 	"$LOG_FILE"
-rm /home/homeassistant/.homeassistant/home-assistant_v2.db   | tee -a 	"$LOG_FILE"
+rm -f /home/homeassistant/.homeassistant/home-assistant.log     | tee -a 	"$LOG_FILE"
+rm -f /home/homeassistant/.homeassistant/home-assistant_v2.db   | tee -a 	"$LOG_FILE"
 
 systemctl stop home-assistant@homeassistant.service          | tee -a 	"$LOG_FILE"
 su -s /bin/bash homeassistant                                | tee -a 	"$LOG_FILE"
