@@ -46,11 +46,11 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			echo "Yes"
 			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			
 			echo "Successfully SYNCed with GitHub......."						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
@@ -60,6 +60,9 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			
 			echo "Skipped Syncing with GitHub"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
@@ -78,11 +81,11 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/static_ip.sh 								| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			
 			echo "Successfully changed IP address  to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
@@ -92,6 +95,9 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			
 			echo "Skipped static IP address"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now  his install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
@@ -111,11 +117,11 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
@@ -125,6 +131,9 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			
 			echo "Skipped SAMBA installation"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
@@ -154,11 +163,11 @@ if [ ! -d "/xxxx" ]; then
 			cp -av /home/pi/programs/command/HAupdate /usr/bin/HA-update				| tee -a 	"$LOG_FILE"
 			chmod +x /home/pi/programs/command/HA-restart						| tee -a 	"$LOG_FILE"
 			cp -a /home/pi/programs/command/HArestart /usr/bin/HA-restart 				| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 
 			echo "Successfully added the custom commands"						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install done "								| tee -a 	"$LOG_FILE"
@@ -168,6 +177,9 @@ if [ ! -d "/xxxx" ]; then
 	    [nN][oO]|[nN])
 			
 			echo "Skipped adding the custom commands"						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install done "								| tee -a 	"$LOG_FILE"
