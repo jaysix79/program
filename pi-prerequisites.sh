@@ -54,7 +54,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -66,7 +65,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -89,7 +87,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -101,7 +98,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now  his install SAMBA file sharing over the network "				| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -125,7 +121,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -137,8 +132,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -171,7 +164,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install done "								| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -183,8 +175,6 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "Now this install done "								| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
