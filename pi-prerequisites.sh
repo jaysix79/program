@@ -46,7 +46,7 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			echo "Yes"
 			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
-			clear
+			
 			echo "Successfully SYNCed with GitHub......."						| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -55,7 +55,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			clear
+			
 			echo "Skipped Syncing with GitHub"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -75,7 +75,7 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/static_ip.sh 								| tee -a 	"$LOG_FILE"
-			clear
+			
 			echo "Successfully changed IP address  to 192.168.xxx.5"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -84,7 +84,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			clear
+			
 			echo "Skipped static IP address"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -105,7 +105,7 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
-			clear
+			
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -114,7 +114,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			clear
+			
 			echo "Skipped SAMBA installation"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -155,7 +155,7 @@ if [ ! -d "/xxxx" ]; then
 			;;
 
 	    [nN][oO]|[nN])
-			clear
+			
 			echo "Skipped adding the custom commands"						| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
