@@ -143,10 +143,10 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			chmod +x /home/pi/programs/command/HA-update/*						| tee -a 	"$LOG_FILE"
 			cp -av /home/pi/programs/command/HAupdate/* /usr/bin/HA-update				| tee -a 	"$LOG_FILE"
-			chmod +x /home/pi/programs/command/HA-restart						| tee -a 	"$LOG_FILE"
-			cp -a /home/pi/programs/command/HArestart /usr/bin/HA-restart 				| tee -a 	"$LOG_FILE"
+			chmod +x /home/pi/programs/command/HA-restart/*						| tee -a 	"$LOG_FILE"
+			cp -a /home/pi/programs/command/HArestart/* /usr/bin/HA-restart 				| tee -a 	"$LOG_FILE"
 			sleep 5
-			clear
+			
 			echo "Successfully added the custom commands"						| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
