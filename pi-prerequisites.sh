@@ -113,7 +113,7 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
-			
+			curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
 			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
