@@ -204,7 +204,40 @@ if [ ! -d "/xxxx" ]; then
 	exit 1
 fi
 
+if [ ! -d "/home/homeassistant/.homeassitant" ]; then
 
+	##	Install AIO HOME ASSISTANT
+	read -r -p "Do you want to proceded with All In One Homeassistant installation? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			echo "Yes"
+			curl -O https://raw.githubusercontent.com/home-assistant/fabric-home-assistant/master/hass_rpi_installer.sh && sudo chown pi:pi hass_rpi_installer.sh && bash hass_rpi_installer.sh			| tee -a 	"$LOG_FILE"
+			
+			echo "Successfully Installed All In One Homeassistant ......."						| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+
+	    [nN][oO]|[nN])
+			
+			echo "You should reboot the Pi"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		
+		echo "Invalid input..."
+		#exit 1
+		;;
+	esac
+
+fi
 
 
 
