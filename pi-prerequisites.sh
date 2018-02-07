@@ -163,7 +163,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install done "								| tee -a 	"$LOG_FILE"
+			echo "Pihole INSTALLATION "								| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -174,7 +174,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this install done "								| tee -a 	"$LOG_FILE"
+			echo "Pihole INSTALLATION"								| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -199,7 +199,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
+			echo "Please reboot your computer for the change to take effect!!! "			| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
@@ -210,7 +210,7 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
+			echo "Please reboot your computer for the change to take effect!!! 	"		| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
@@ -249,18 +249,16 @@ if [ ! -d "/xxxx" ]; then
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
 			;;
 
 	    [nN][oO]|[nN])
 			
-			echo "Skipped SAMBA installation"
+			echo "Skipped REBOOT "
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
 			;;
 
 	    *)
