@@ -114,7 +114,7 @@ if [ ! -d "/xxxx" ]; then
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
 			curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
-			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
+			#echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
@@ -184,10 +184,45 @@ if [ ! -d "/xxxx" ]; then
 		;;
 	
 	esac
+	
+	
+	
+	##	Pihole INSTALLATION
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			#/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
+			curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
+			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
+			;;
 
+	    [nN][oO]|[nN])
+			
+			echo "Skipped Pihole installation"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
+			;;
 
-
-
+	    *)
+		
+		echo "Invalid input..."
+		#exit 1
+		;;
+	
+	esac
+	
+	
+	
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
@@ -200,7 +235,48 @@ if [ ! -d "/xxxx" ]; then
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
+
+	##	DO YOU WANT TO REBOOT YOUR COMPUTER
+	read -r -p "Are You Sure you want to continue? [Y/n] " input
+	case $input in
+	    [yY][eE][sS]|[yY])
+			#/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
+			#curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
+			#echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
+			sudo reboot
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	 "					| tee -a 	"$LOG_FILE"
+			;;
+
+	    [nN][oO]|[nN])
+			
+			echo "Skipped SAMBA installation"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "" 										| tee -a 	"$LOG_FILE"
+			echo "Do you want to add the custom commands? 	"					| tee -a 	"$LOG_FILE"
+			;;
+
+	    *)
+		
+		echo "Invalid input..."
+		#exit 1
+		;;
 	
+	esac
+	
+	
+	
+	
+
+
+
 	exit 1
 fi
 
