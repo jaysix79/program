@@ -35,44 +35,9 @@ if [ ! -d "/xxxx" ]; then
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "You are Running the pi-prerequisites.sh script."							| tee -a 	"$LOG_FILE"
 	echo "This script is best to run right after a fresh Pi Installation" 					| tee -a 	"$LOG_FILE"
-	echo "First I will SYNC with GitHub......." 								| tee -a 	"$LOG_FILE"
+	#echo "First I will SYNC with GitHub......." 								| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
 	echo "" 												| tee -a 	"$LOG_FILE"
-
-	
-	##	sYNCING WITH GITHUB
-	read -r -p "Are You Sure you want to continue? [Y/n] " input
-	case $input in
-	    [yY][eE][sS]|[yY])
-			echo "Yes"
-			/home/pi/programs/git_clone.sh								| tee -a 	"$LOG_FILE"
-			
-			echo "Successfully SYNCed with GitHub......."						| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
-			;;
-
-	    [nN][oO]|[nN])
-			
-			echo "Skipped Syncing with GitHub"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "" 										| tee -a 	"$LOG_FILE"
-			echo "Now this will set IP address to 192.168.xxx.5"					| tee -a 	"$LOG_FILE"
-			;;
-
-	    *)
-		
-		echo "Invalid input..."
-		#exit 1
-		;;
-	esac
 	
 	##	SETTING UP IP
 	read -r -p "Are You Sure you want to continue? [Y/n] " input
@@ -113,8 +78,8 @@ if [ ! -d "/xxxx" ]; then
 	case $input in
 	    [yY][eE][sS]|[yY])
 			/home/pi/programs/install/Install_samba.sh 						| tee -a 	"$LOG_FILE"
-			curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
-			#echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
+			#curl -sSL https://install.pi-hole.net | bash						| tee -a 	"$LOG_FILE"
+			echo "Successfully Installed SAMBA"							| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
 			echo "" 										| tee -a 	"$LOG_FILE"
